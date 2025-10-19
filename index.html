@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Heromate - Header </title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles --> 
+    <link rel="stylesheet" href="./styles/tokens.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./components/header.css">
+    <link rel="stylesheet" href="./components/hero.css">
+    <link rel="stylesheet" href="./components/footer.css">
+    <!-- Using Tailwind CDN for development - will be replaced with production build later -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: 'var(--color-blue)',
+              cta: 'var(--color-green)',
+              surface: 'var(--bg-surface)',
+              primary: 'var(--text-primary)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+              display: ['"Exo 2"', 'Inter', 'ui-sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body>
+
+    <!-- Component mount points -->
+    <header class="c-header" role="banner">
+      <div class="c-header__inner container">
+        <!-- Logo -->
+        <a href="#" class="c-header__brand" aria-label="Heromate home">
+          <img src="/public/icons/logo.png" alt="Heromate" class="w-full h-10">
+        </a>
+    
+        <!-- Mobile menu toggle -->
+        <button class="c-header__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="c-header__bar"></span>
+          <span class="c-header__bar"></span>
+          <span class="c-header__bar"></span>
+        </button>
+    
+        <!-- Navigation -->
+        <nav class="c-header__nav" aria-label="Primary">
+          <ul class="c-header__list">
+            <li><a class="pill pill--active" href="#">Home</a></li>
+            <li>
+              <button class="link-with-caret" type="button" aria-haspopup="true" aria-expanded="false">
+                Services
+                <svg class="caret" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill="currentColor" d="M5.5 7.5l4.5 4 4.5-4" />
+                </svg>
+              </button>
+            </li>
+            <li><a class="link" href="#">Price Estimator</a></li>
+            <li><a class="link" href="#">Jobs</a></li>
+          </ul>
+        </nav>
+    
+        <!-- Action buttons -->
+        <div class="c-header__actions">
+          <a class="link" href="./pages/login.html">Login</a>
+          <a class="btn btn--cta" href="#">Become a Hero</a>
+        </div>
+      </div>
+    
+      <!-- Mobile drawer -->
+      <div class="c-header__drawer" id="mobile-menu" hidden>
+        <nav class="c-header__drawer-nav" aria-label="Mobile">
+          <a class="pill pill--active" href="#">Home</a>
+          <button class="link-with-caret" type="button" aria-haspopup="true" aria-expanded="false">
+            Services
+            <svg class="caret" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill="currentColor" d="M5.5 7.5l4.5 4 4.5-4" />
+            </svg>
+          </button>
+          <a class="link" href="#">Price Estimator</a>
+          <a class="link" href="#">Jobs</a>
+          <hr class="divider" />
+          <a class="link" href="./pages/login.html">Login</a>
+          <a class="btn btn--cta" href="#">Become a Hero</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" >
+      <section id="hero" class="hero" aria-label="Heromate Hero">
+        <!-- Decorative background shapes -->
+        <div class="hero__bg" aria-hidden="true">
+          <svg class="hero-shape hero-shape--lt" xmlns="http://www.w3.org/2000/svg" width="268" height="230" viewBox="0 0 268 230" fill="none" focusable="false">
+            <path d="M152.057 0.0293069V114.168C109.593 116.211 52.1343 111.688 12.4227 84.2547C-9.39522 69.1957 -24.5067 48.1831 -33.351 20.5166C-35.401 14.0669 -37.1289 7.2086 -38.5346 0.00012207H-97.3405H-156L-154.624 8.58025H-154.653C-154.184 11.6446 -153.686 14.6797 -153.13 17.7149L-153.101 17.9484C-140.449 88.2821 -106.829 142.623 -53.0604 179.57C6.12626 220.223 78.2279 230 133.842 230C182.983 230 219.268 222.383 222.373 221.712L268 211.789V0.0293069H152.057Z" fill="#B9E8FF"/>
+          </svg>
+          <svg class="hero-shape hero-shape--lb" xmlns="http://www.w3.org/2000/svg" width="268" height="230" viewBox="0 0 268 230" fill="none" focusable="false">
+            <path d="M266.536 221.506L266.653 221.477C265.804 215.931 264.867 210.472 263.754 205.101L263.637 204.371H263.607C249.932 137.73 216.841 86.0348 165.068 50.4229C53.5548 -26.1718 -103.728 6.87137 -110.376 8.30168L-156 18.1971V230H-40.0655V115.838C2.42532 113.795 59.8801 118.29 99.589 145.758C121.903 161.199 137.219 182.858 145.974 211.523C147.761 217.361 149.284 223.549 150.543 230H209.403H268L266.536 221.506Z" fill="#B9E8FF"/>
+          </svg>
+          <svg class="hero-shape hero-shape--rt" xmlns="http://www.w3.org/2000/svg" width="268" height="230" viewBox="0 0 268 230" fill="none" focusable="false">
+            <path d="M308.057 0.0293069V114.168C265.593 116.211 208.134 111.688 168.423 84.2547C146.605 69.1956 131.493 48.1831 122.649 20.5166C120.599 14.0669 118.871 7.2086 117.465 0.00012207H58.6595H0L1.37643 8.58025H1.34715C1.81572 11.6446 2.31358 14.6797 2.87001 17.7149L2.89929 17.9484C15.5508 88.2821 49.1709 142.623 102.94 179.57C162.126 220.223 234.228 230 289.842 230C338.983 230 375.268 222.383 378.373 221.712L424 211.789V0.0293069H308.057Z" fill="#B9E8FF"/>
+          </svg>
+          <svg class="hero-shape hero-shape--rb" xmlns="http://www.w3.org/2000/svg" width="268" height="230" viewBox="0 0 268 230" fill="none" focusable="false">
+            <path d="M422.536 221.506L422.653 221.477C421.804 215.931 420.867 210.472 419.754 205.101L419.637 204.371H419.607C405.932 137.73 372.841 86.0348 321.067 50.4229C209.555 -26.1718 52.2716 6.87137 45.6241 8.30168L0 18.1971V230H115.935V115.838C158.425 113.795 215.88 118.29 255.589 145.758C277.903 161.199 293.219 182.858 301.974 211.523C303.761 217.361 305.284 223.549 306.543 230H365.403H424L422.536 221.506Z" fill="#B9E8FF"/>
+          </svg>
+        </div>
+
+        <div class="hero__inner container">
+          <h1 class="hero__title">
+            Big or Small, There’s 
+          </h1>
+          <h1 class="hero__title mt-3"> a
+            <span class="hero__highlight">Hero
+              <svg xmlns="http://www.w3.org/2000/svg" width="175" height="18" viewBox="0 0 175 18" fill="none">
+                <path d="M158 2.00012C167.667 6.16679 182.5 14.6001 164.5 15.0001C142 15.5001 57 4.00012 1 15.0001" stroke="#9AE841" stroke-width="4"/>
+              </svg>
+            </span>
+            for It</h1>
+
+          <p class="hero__subtitle mt-6">
+            From tutoring to dog walking, catching a ride to fixing that leak — HEROMATE connects you
+            with verified locals you can trust. No quotes, no commissions, just honest help.
+          </p>
+
+          <div class="hero__chevrons" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="58" height="48" viewBox="0 0 58 48" fill="none">
+              <path d="M2 27.143L29 46.0001L56 27.143M2 2.00012L29 20.8573L56 2.00012" stroke="#9AE841" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <form class="hero__search" role="search" aria-label="Find Heros">
+            <label class="sr-only" for="hero-q">Search</label>
+            <div class="relative w-full">
+            <input id="hero-q" name="q" type="search" inputmode="search"
+                placeholder="Type here... what do you need help with today?" required 
+                class="w-full px-4 py-2 text-lg" />
+              <div class="absolute bottom-0 left-0 w-full h-0.5 bg-gray-300"></div>
+            </div>
+            <button type="submit" class="hero__btn">
+              <svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"></circle>
+                <path d="M20 20l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+              <span>Find Heros</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Services strip -->
+      <section id="services" class="bg-[color:var(--bg-surface)]" style="border-top:1px solid rgba(30,144,255,.22);">
+        <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 py-6 md:py-8">
+          <ul class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-6 items-start justify-items-center">
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Furniture<br/>Assembly</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Pet<br/>Mending</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Airport<br/>Transfer</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Moving<br/>Places</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Pool<br/>Cleaning</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Renovations</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Water<br/>Proofing</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Decking &amp;<br/>Fencing</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Concreting</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Painting &amp;<br/>Rendering</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Plumber<br/>24×7</span>
+            </li>
+
+            <li class="flex flex-col items-center gap-2 text-center">
+              <span class="flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm"
+                    style="border:1px solid var(--color-blue);">
+                <img src="/public/icons/service.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span class="text-[13px] leading-snug text-[color:rgba(46,50,56,0.85)]">Locksmith<br/>24×7</span>
+            </li>
+          </ul>
+
+          <div class="mt-6 md:mt-8 flex justify-center">
+            <a href="#!" class="inline-flex items-center gap-2 rounded-full bg-[color:var(--color-blue)] text-white px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+               style="--tw-ring-color: var(--color-blue);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>More Services</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Us section -->
+      <section id="why-us" class="bg-[color:var(--bg-surface)] py-10 md:py-14" aria-label="Heromate Story - Why us?">
+        <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6">
+          <div class="">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+              <div>
+                <div class="mb-2 justify-self-end">
+                  <!-- <img src="/public/icons/whyus.svg" alt="" class="h-10 w-10"aria-hidden="true" /> -->
+                  <h2 class="font-display text-3xl md:text-3xl lg:text-[2.6rem] font-extrabold text-[color:var(--text-primary)]">
+                    Heromate Story - Why us ?
+                  </h2>
+                  <svg class="mb-4 md:mb-6
+                  ms-auto" xmlns="http://www.w3.org/2000/svg" width="176" height="17" viewBox="0 0 176 17" fill="none">
+                   <path d="M3.44357 10.5585C8.66294 7.62138 24.3463 3.61574 45.3249 11.0899C71.5482 20.4326 81.3142 -0.466608 115.316 8.47423C149.317 17.4151 163.578 16.5946 172.817 3.19695" stroke="#9AE841" stroke-width="5" stroke-linecap="round"/>
+                 </svg>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 pl-6">
+                  <div class="flex items-center gap-3 rounded-xl bg-[#EEFFFC] p-2 border-[1px] border-[#E7E7E7] ">
+                    <span class="shrink-0 rounded-lg p-2 ">
+                      <img src="/public/icons/whyus.svg" alt="" class="h-10 w-10" aria-hidden="true" />
+                    </span>
+                    <p class="text-[18px] md:text-[15px] leading-snug text-[color:var(--text-primary)]" style="font-weight: 500;">No Quotes or Bidding Games</p>
+                  </div>
+
+                  <div class="flex items-center gap-3 rounded-xl bg-[#EEFFFC] p-2 border-[1px] border-[#E7E7E7] ">
+                    <span class="shrink-0 rounded-lg p-2 ">
+                      <img src="/public/icons/whyus.svg" alt="" class="h-10 w-10" aria-hidden="true" />
+                    </span>
+                    <p class="text-[18px] md:text-[15px] leading-snug text-[color:var(--text-primary)]" style="font-weight: 500;">No Quotes or Bidding Games</p>
+                  </div>
+
+                  <div class="flex items-center gap-3 rounded-xl bg-[#EEFFFC] p-2 border-[1px] border-[#E7E7E7] ">
+                    <span class="shrink-0 rounded-lg p-2 ">
+                      <img src="/public/icons/whyus.svg" alt="" class="h-10 w-10" aria-hidden="true" />
+                    </span>
+                    <p class="text-[18px] md:text-[15px] leading-snug text-[color:var(--text-primary)]" style="font-weight: 500;">No Quotes or Bidding Games</p>
+                  </div>
+
+                  <div class="flex items-center gap-3 rounded-xl bg-[#EEFFFC] p-2 border-[1px] border-[#E7E7E7] ">
+                    <span class="shrink-0 rounded-lg p-2 ">
+                      <img src="/public/icons/whyus.svg" alt="" class="h-10 w-10" aria-hidden="true" />
+                    </span>
+                    <p class="text-[18px] md:text-[15px] leading-snug text-[color:var(--text-primary)]" style="font-weight: 500;">No Quotes or Bidding Games</p>
+                  </div>
+
+                  <div class="flex items-center gap-3 rounded-xl bg-[#EEFFFC] p-2 border-[1px] border-[#E7E7E7] ">
+                    <span class="shrink-0 rounded-lg p-2 ">
+                      <img src="/public/icons/whyus.svg" alt="" class="h-10 w-10" aria-hidden="true" />
+                    </span>
+                    <p class="text-[18px] md:text-[15px] leading-snug text-[color:var(--text-primary)]" style="font-weight: 500;">No Quotes or Bidding Games</p>
+                  </div>
+
+                  <div class="flex items-center gap-3 rounded-xl bg-[#EEFFFC] p-2 border-[1px] border-[#E7E7E7] ">
+                    <span class="shrink-0 rounded-lg p-2 ">
+                      <img src="/public/icons/whyus.svg" alt="" class="h-10 w-10" aria-hidden="true" />
+                    </span>
+                    <p class="text-[18px] md:text-[15px] leading-snug text-[color:var(--text-primary)]" style="font-weight: 500;">No Quotes or Bidding Games</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <div>
+                <div class="relative rounded-2xl overflow-hidden ring-1 ring-[color:var(--color-blue)]/30">
+                  <video id="aboutVideo"
+                         class="block w-full aspect-video object-cover"
+                         playsinline
+                         muted
+                         preload="none"
+                         poster="/public/img/video-image.png">
+                     <source src="/videos/why-us.mp4" type="video/mp4" /> 
+                  </video>
+                  <button id="aboutPlay" type="button"
+                          class="absolute inset-0 grid place-items-center focus:outline-none"
+                          aria-label="Play video">
+                    <span class="h-16 w-16 md:h-20 md:w-20 rounded-full bg-[color:var(--color-green)] shadow-lg grid place-items-center">
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M9 7l8 5-8 5V7z" fill="white"/>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community section -->
+      <section id="community" class="bg-[color:var(--bg-surface)] py-12 md:py-16" aria-label="Our Commitment to Community">
+        <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6">
+          <div class="text-center">
+            <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[color:var(--text-primary)] text-balance">
+              Our <span class="relative">Commitment<svg class="absolute mt-1 right-0" xmlns="http://www.w3.org/2000/svg" width="264" height="16" viewBox="0 0 264 16" fill="none">
+                <path d="M3.01385 6.14118C10.9856 3.32546 34.9209 -0.319913 66.8889 7.62429C106.849 17.5545 121.823 -3.10333 173.648 6.60228C225.473 16.3079 247.226 15.8124 261.368 2.63716" stroke="#9AE841" stroke-width="5" stroke-linecap="round"/>
+              </svg></span> to <span class="relative">Community<svg class="absolute mt-1 right-0" xmlns="http://www.w3.org/2000/svg" width="264" height="16" viewBox="0 0 264 16" fill="none">
+                <path d="M3.01385 6.14118C10.9856 3.32546 34.9209 -0.319913 66.8889 7.62429C106.849 17.5545 121.823 -3.10333 173.648 6.60228C225.473 16.3079 247.226 15.8124 261.368 2.63716" stroke="#9AE841" stroke-width="5" stroke-linecap="round"/>
+              </svg></span>
+            </h2>
+            <p class="mt-8 text-[13px] md:text-sm text-[color:rgba(46,50,56,0.75)]">
+              HEROMATE™ is more than just a platform — it's a movement that supports<br class="hidden md:inline" />
+              and celebrates our diverse community.
+            </p>
+          </div>
+          <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+            <article class="flex flex-col items-center text-center px-3">
+              <span class="h-16 w-16 rounded-full bg-white grid place-items-center ring-1 ring-[color:var(--color-blue)]/30 shadow-sm">
+                <img src="/public/icons/service.svg" alt="" aria-hidden="true" class="h-8 w-8" />
+              </span>
+              <h3 class="mt-3 text-base md:text-lg font-semibold text-[color:var(--text-primary)]">
+                Supporting Aboriginal &amp; Torres Strait Islander Heroes
+              </h3>
+              <p class="mt-2 text-[13px] md:text-sm leading-snug text-[color:rgba(46,50,56,0.8)] max-w-xs">
+                Lifetime membership with recognition and Cultural Hero badge.
+              </p>
+            </article>
+
+            <article class="flex flex-col items-center text-center px-3">
+              <span class="h-16 w-16 rounded-full bg-white grid place-items-center ring-1 ring-[color:var(--color-blue)]/30 shadow-sm">
+                <img src="/public/icons/service.svg" alt="" aria-hidden="true" class="h-8 w-8" />
+              </span>
+              <h3 class="mt-3 text-base md:text-lg font-semibold text-[color:var(--text-primary)]">
+                Empowering Women in Trades
+              </h3>
+              <p class="mt-2 text-[13px] md:text-sm leading-snug text-[color:rgba(46,50,56,0.8)] max-w-xs">
+                Visibility, tools, and a fair go for women pursuing skilled work.
+              </p>
+            </article>
+
+            <article class="flex flex-col items-center text-center px-3">
+              <span class="h-16 w-16 rounded-full bg-white grid place-items-center ring-1 ring-[color:var(--color-blue)]/30 shadow-sm">
+                <img src="/public/icons/service.svg" alt="" aria-hidden="true" class="h-8 w-8" />
+              </span>
+              <h3 class="mt-3 text-base md:text-lg font-semibold text-[color:var(--text-primary)]">
+                Encouraging Young Workers
+              </h3>
+              <p class="mt-2 text-[13px] md:text-sm leading-snug text-[color:rgba(46,50,56,0.8)] max-w-xs">
+                Helping the next generation gain confidence, skills, and experience.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+     <!-- Community Showcase: Alternating image-content grid with three rows -->
+<section id="community-showcase" class="bg-[color:var(--bg-surface)] py-12 md:py-16" aria-label="Community stories and benefits">
+        <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6">
+    <div class="rounded-3xl border border-[color:var(--color-blue)]/20 bg-white p-6 md:p-8 lg:p-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <!-- Row 1: Image (L) + Content (R) -->
+        <figure class="rounded-2xl overflow-hidden ring-1 ring-[color:var(--color-blue)]/25">
+          <img
+            src="/public/img/first.png"
+            alt="Dog and cat playing together indoors"
+            class="block w-full h-full object-cover aspect-video"
+              />
+            </figure>
+
+        <article class="relative rounded-2xl overflow-hidden ring-1 ring-[color:var(--color-blue)]/25 p-6 md:p-8">
+          <!-- Green blob background for "Built for Trust" card -->
+          <div class="absolute inset-0 opacity-30" style="background: linear-gradient(135deg, #9AE841 0%, #B8F77D 100%); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;"></div>
+          <div class="relative z-10">
+                <span class="inline-flex items-center rounded-full bg-[color:var(--color-blue)]/10 text-[color:var(--color-blue)] px-3 py-1 text-xs font-semibold">
+                  Heromates
+                </span>
+                <h3 class="mt-3 font-display text-2xl md:text-3xl font-extrabold text-[color:var(--text-primary)]">
+                  Built for Trust
+                </h3>
+                <ul class="mt-3 space-y-1.5 text-sm text-[color:rgba(46,50,56,0.9)]">
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    Verified ABNs &amp; IDs
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    Transparent reviews
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    Direct communication
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    Deputy support if needed
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+             <!-- Row 2: Content (L) + Image (R) -->
+        <article class="relative rounded-2xl overflow-hidden ring-1 ring-[color:var(--color-blue)]/25 p-6 md:p-8">
+          <!-- Blue circular background for "For Customers" card -->
+          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 30% 30%, #1E90FF 0%, #B3D9FF 100%);"></div>
+          <div class="relative z-10">
+                <span class="inline-flex items-center rounded-full bg-[color:var(--color-blue)]/10 text-[color:var(--color-blue)] px-3 py-1 text-xs font-semibold">
+              Why it Works
+                </span>
+                <h3 class="mt-3 font-display text-2xl md:text-3xl font-extrabold text-[color:var(--text-primary)]">
+                  For Customers
+                </h3>
+                <ul class="mt-3 space-y-1.5 text-sm text-[color:rgba(46,50,56,0.9)]">
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    No hidden charges
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                Instant pricing
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    Verified workers
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                Arrange payment directly
+                  </li>
+                </ul>
+                <div class="mt-5">
+              <a href="#!" class="inline-flex items-center gap-2 rounded-full bg-[color:var(--color-blue)] text-white px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                 style="--tw-ring-color: var(--color-blue);">
+                    <span>Post a Job</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+        <figure class="rounded-2xl overflow-hidden ring-1 ring-[color:var(--color-blue)]/25">
+          <img
+            src="/public/img/second.png"
+            alt="Group of people at an outdoor event"
+            class="block w-full h-full object-cover aspect-video"
+              />
+            </figure>
+
+             <!-- Row 3: Image (L) + Content (R) -->
+        <figure class="rounded-2xl overflow-hidden ring-1 ring-[color:var(--color-blue)]/25">
+              <img
+            src="/public/img/third.png"
+                alt="Family enjoying time in a park"
+            class="block w-full h-full object-cover aspect-video"
+              />
+            </figure>
+
+        <article class="relative rounded-2xl overflow-hidden ring-1 ring-[color:var(--color-blue)]/25 p-6 md:p-8">
+          <!-- Pink/purple gradient blob background for "For Heroes" card -->
+          <div class="absolute inset-0 opacity-30" style="background: linear-gradient(135deg, #FF69B4 0%, #DDA0DD 50%, #FFB6C1 100%); border-radius: 50% 50% 50% 50% / 40% 60% 60% 40%;"></div>
+          <div class="relative z-10">
+                <span class="inline-flex items-center rounded-full bg-[color:var(--color-blue)]/10 text-[color:var(--color-blue)] px-3 py-1 text-xs font-semibold">
+                  Our Brand
+                </span>
+                <h3 class="mt-3 font-display text-2xl md:text-3xl font-extrabold text-[color:var(--text-primary)]">
+                  For Heroes
+                </h3>
+                <ul class="mt-3 space-y-1.5 text-sm text-[color:rgba(46,50,56,0.9)]">
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                No Commissions
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    Monthly plans
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    Zero lead spam
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-blue)]"></span>
+                    Lifetime access for Cultural Heroes
+                  </li>
+                </ul>
+                <div class="mt-5">
+              <a href="#!" class="inline-flex items-center gap-2 rounded-full bg-[color:var(--color-green)] text-white px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                     style="--tw-ring-color: var(--color-green);">
+                    <span>Become a Hero</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+      </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Philosophy & Identity section -->
+      <section id="philosophy" class="bg-[#D7F1FF] py-4 md:py-4 relative overflow-hidden" aria-label="Philosophy and Aussie Mate Identity">
+        <!-- Decorative background stars (left side) -->
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+          <svg class="absolute top-12 left-8 text-[color:var(--color-blue)] opacity-60" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/>
+          </svg>
+          <svg class="absolute top-32 left-16 text-[color:var(--color-blue)] opacity-40" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/>
+          </svg>
+          <svg class="absolute top-48 left-32 text-[color:var(--color-blue)] opacity-50" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/>
+          </svg>
+          <svg class="absolute top-20 left-1/3 text-[color:var(--color-blue)] opacity-35" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/>
+          </svg>
+      
+          <!-- Circular/curved SVG on right side -->
+          <svg class="absolute -right-20 top-1/2 -translate-y-1/2 text-[color:var(--color-blue)] opacity-20" width="400" height="400" viewBox="0 0 400 400" fill="none">
+            <circle cx="200" cy="200" r="180" stroke="currentColor" stroke-width="3" opacity="0.3"/>
+            <circle cx="200" cy="200" r="140" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+            <path d="M200 20Q320 100 320 200Q320 300 200 380Q80 300 80 200Q80 100 200 20" stroke="currentColor" stroke-width="2" opacity="0.15" fill="none"/>
+          </svg>
+        </div>
+      
+        <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Left: Heading, List, Button -->
+            <div>
+              <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[color:var(--text-primary)] text-balance">
+                Philosophy &amp; <span class="text-[color:var(--color-green)]">Aussie Mate</span> <span class="relative inline-block">
+                  Identity
+                  <!-- Green swoosh underline -->
+                  <svg class="absolute -bottom-3 left-0 w-full" xmlns="http://www.w3.org/2000/svg" width="200" height="16" viewBox="0 0 200 16" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M2 8c60 10 136 10 196 0" stroke="var(--color-green)" stroke-width="6" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                </h2>
+      
+              <!-- Numbered list of values -->
+              <ol class="mt-8 space-y-3 text-[color:rgba(46,50,56,0.9)] text-base md:text-lg">
+                <li class="flex gap-3">
+                  <span class="font-semibold text-[color:var(--color-blue)] shrink-0">01.</span>
+                  <span>A mate helps without judgement</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-semibold text-[color:var(--color-blue)] shrink-0">02.</span>
+                  <span>A mate shows up when you need them</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-semibold text-[color:var(--color-blue)] shrink-0">03.</span>
+                  <span>A mate doesn't take more than their fair share</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-semibold text-[color:var(--color-blue)] shrink-0">04.</span>
+                  <span>We empower Heroes instead of exploiting them</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-semibold text-[color:var(--color-blue)] shrink-0">05.</span>
+                  <span>We celebrate community instead of competition</span>
+                </li>
+              </ol>
+
+              <!-- Download button -->
+              <div class="mt-6">
+                <a href="#!" class="inline-flex items-center gap-2 rounded-full bg-[color:var(--color-green)] text-white px-6 py-3 text-sm md:text-base font-semibold shadow-sm hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2" style="--tw-ring-color: var(--color-green);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>Download heromate fairplay charter</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Image -->
+            <div class="order-first lg:order-none">
+              <figure class="rounded-3xl overflow-hidden ring-1 ring-[color:var(--color-blue)]/25 bg-white shadow-sm">
+                <img
+                  src="/public/img/family.png"
+                  alt="Family playing with colorful blocks"
+                  class="block w-full h-full object-cover aspect-video md:aspect-auto"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Email support CTA -->
+      <section id="support-cta" class="bg-[#D7F1FF] mb-[-2rem]" aria-label="We're here when you need a mate">
+        <div class="mx-auto max-w-[var(--container-max)] w-[80%] px-4 md:px-6">
+          <div class="relative rounded-2xl bg-[color:var(--color-blue)] text-white p-6 md:p-8 lg:p-10 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 items-center">
+              <div>
+                <h3 class="font-display text-2xl md:text-3xl lg:text-4xl font-extrabold text-pretty">
+                  We're Here When You Need a Mate
+                </h3>
+                <p class="mt-3 text-white/90 text-sm md:text-base">
+                  Whether you have a question, need a hand navigating the platform, or just want to say g'day — we're your mates and we're here to help.
+                </p>
+              </div>
+              <div class="justify-self-start lg:justify-self-end">
+                <div class="inline-flex items-center gap-3 rounded-2xl bg-white text-[color:var(--text-primary)] px-4 py-3 md:px-5 md:py-4 shadow-sm ring-1 ring-black/5">
+                  <span class="grid place-items-center h-9 w-9 rounded-xl bg-[color:var(--bg-surface)] text-[color:var(--color-blue)] ring-1 ring-[color:var(--color-blue)]/20">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" />
+                      <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                  </span>
+                  <span class="text-sm md:text-base font-semibold select-all">support@heromate.com.au</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-4 left-6 right-6 h-4 bg-black/10 rounded-b-3xl" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo content removed for production -->
+    </main>
+
+    <!-- Footer Before    -->
+    <section class="heromate-heading-section" aria-label="Heromate brand heading">
+      <div class="heromate-heading-wrapper">
+        <h2 class="heromate-heading-text text-[17rem]">heromate</h2>
+      </div>
+    </section>
+    
+    
+    <!-- Footer component -->
+    <footer class="site-footer bg-[#000000] text-white">
+      <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 py-12 md:py-16">
+        <!-- Updated grid layout and spacing for cleaner design -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
+          <!-- Brand + acknowledgement -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <!-- Simple placeholder logo mark; replace with your SVG later -->
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-[color:var(--color-blue)] text-white font-bold text-sm">H</span>
+              <span class="text-lg font-semibold tracking-tight">heromate<span aria-hidden="true">™</span></span>
+            </div>
+            <p class="text-sm text-white/70 leading-relaxed">
+              We acknowledge the Traditional Custodians of the lands, skies, and waters across Australia, and their enduring
+              connection to Country. At HEROMATE, we pay our deepest respects to Elders past and present, and we honour the
+              strength, resilience, and wisdom of all Aboriginal and Torres Strait Islander peoples.
+            </p>
+          </div>
+    
+          <!-- Quick links: Locations -->
+          <nav aria-label="Locations" class="space-y-3">
+            <!-- Updated heading color to blue -->
+            <h3 class="text-[color:var(--color-blue)] font-semibold text-sm uppercase tracking-wide">Locations</h3>
+            <ul class="space-y-2 text-sm text-white/70">
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Sydney</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Melbourne</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Brisbane</a></li>
+            </ul>
+          </nav>
+    
+          <!-- Quick links: Top Services -->
+          <nav aria-label="Top Services" class="space-y-3">
+            <!-- Updated heading color to blue -->
+            <h3 class="text-[color:var(--color-blue)] font-semibold text-sm uppercase tracking-wide">Top Services</h3>
+            <ul class="space-y-2 text-sm text-white/70">
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Furniture Assembling</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Airport Pickup</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Dog Mending</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Cladding</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Gyprock Fixing</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Cleaning</a></li>
+            </ul>
+          </nav>
+    
+          <!-- Quick links: Discover -->
+          <nav aria-label="Discover" class="space-y-3">
+            <!-- Updated heading color to blue -->
+            <h3 class="text-[color:var(--color-blue)] font-semibold text-sm uppercase tracking-wide">Discover</h3>
+            <ul class="space-y-2 text-sm text-white/70">
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Who is Hero?</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Why Us?</a></li>
+              <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Can I be Hero?</a></li>
+            </ul>
+          </nav>
+        </div>
+    
+        <!-- Bottom bar -->
+        <!-- Adjusted layout and spacing for cleaner footer credit section -->
+        <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center md:items-center justify-between gap-6 text-xs text-white/60">
+          <p>
+            © <span id="year"></span> HEROMATE™ | ABN 21 588 535 560 | All rights reserved.
+          </p>
+          <div class="flex items-center gap-4">
+            <!-- Social icons -->
+            <a aria-label="YouTube" href="#!" class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)]">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/80 group-hover:text-white"><path d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.8 2.5 12 2.5 12 2.5h0s-4.8 0-8.2.3c-.6.1-1.6.1-2.4 1C.7 4.5.5 6.2.5 6.2S.3 8.2.3 10.3v1.5C.3 14 0.5 16 0.5 16s.2 1.7.9 2.4c.9.9 2 .9 2.4 1 1.7.2 7.2.3 8.2.3 0 0 4.8 0 8.2-.3.6-.1 1.6-.1 2.4-1 .7-.7.9-2.4.9-2.4s.2-2 .2-4.2v-1.5c0-2.1-.2-4.1-.2-4.1zM9.8 13.7V7.9l6 2.9-6 2.9z"/></svg>
+            </a>
+            <a aria-label="Facebook" href="#!" class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)]">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/80 group-hover:text-white"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.3V12h2.3V9.7c0-2.2 1.3-3.4 3.3-3.4.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 2.9h-1.9v7A10 10 0 0022 12z"/></svg>
+            </a>
+            <a aria-label="LinkedIn" href="#!" class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)]">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/80 group-hover:text-white"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-.9 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6v8.6h-4V15c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V23h-4V8.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+   
+
+    <!-- Scripts --> 
+    <script type="module" src="./scripts/include.js"></script>
+    <script type="module" src="./components/header.js"></script>
+    <script type="module" src="./components/hero.js"></script>
+    <script type="module" src="./components/why-us.js"></script>
+    <script type="module" src="./components/community.js"></script>
+    <script type="module" src="./components/footer.js"></script>
+  </body>
+</html>

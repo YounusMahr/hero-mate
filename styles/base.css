@@ -1,0 +1,120 @@
+/* Base / Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--bg-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: var(--brand);
+  color: var(--text-inverse);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+/* Demo content section */
+.content-placeholder {
+  padding: var(--space-8) 0;
+}
+.ref-figure {
+  margin-top: var(--space-8);
+  padding: var(--space-4);
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+.ref-figure img {
+  border-radius: var(--radius-md);
+}
+.ref-figure figcaption {
+  margin-top: var(--space-2);
+  font-size: 0.875rem;
+  color: rgba(46, 50, 56, 0.8);
+}
+
+
+/* philosophy section */
+/* Philosophy & Identity Section Styles */
+
+#philosophy {
+  background-color: #d7f1ff;
+  position: relative;
+}
+
+/* Ensure decorative elements don't interfere with content */
+#philosophy .pointer-events-none {
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #philosophy {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  #philosophy h2 {
+    font-size: 1.75rem;
+  }
+
+  #philosophy ol {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 640px) {
+  #philosophy {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  #philosophy h2 {
+    font-size: 1.5rem;
+  }
+
+  #philosophy ol li {
+    gap: 0.5rem;
+  }
+
+  #philosophy svg {
+    display: none;
+  }
+}

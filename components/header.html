@@ -1,0 +1,57 @@
+
+<header class="c-header" role="banner">
+  <div class="c-header__inner container">
+    <!-- Logo -->
+    <a href="#" class="c-header__brand" aria-label="Heromate home">
+      <img src="./public/images/logo.png" alt="Heromate" class="w-10 h-10">
+    </a>
+
+    <!-- Mobile menu toggle -->
+    <button class="c-header__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="c-header__bar"></span>
+      <span class="c-header__bar"></span>
+      <span class="c-header__bar"></span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="c-header__nav" aria-label="Primary">
+      <ul class="c-header__list">
+        <li><a class="pill pill--active" href="#">Home</a></li>
+        <li>
+          <button class="link-with-caret" type="button" aria-haspopup="true" aria-expanded="false">
+            Services
+            <svg class="caret" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill="currentColor" d="M5.5 7.5l4.5 4 4.5-4" />
+            </svg>
+          </button>
+        </li>
+        <li><a class="link" href="#">Price Estimator</a></li>
+        <li><a class="link" href="#">Jobs</a></li>
+      </ul>
+    </nav>
+
+    <!-- Action buttons -->
+    <div class="c-header__actions">
+      <a class="link" href="./pages/login.html">Login</a>
+      <a class="btn btn--cta" href="#">Become a Hero</a>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="c-header__drawer" id="mobile-menu" hidden>
+    <nav class="c-header__drawer-nav" aria-label="Mobile">
+      <a class="pill pill--active" href="#">Home</a>
+      <button class="link-with-caret" type="button" aria-haspopup="true" aria-expanded="false">
+        Services
+        <svg class="caret" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill="currentColor" d="M5.5 7.5l4.5 4 4.5-4" />
+        </svg>
+      </button>
+      <a class="link" href="#">Price Estimator</a>
+      <a class="link" href="#">Jobs</a>
+      <hr class="divider" />
+      <a class="link" href="./pages/login.html">Login</a>
+      <a class="btn btn--cta" href="#">Become a Hero</a>
+    </nav>
+  </div>
+</header>
