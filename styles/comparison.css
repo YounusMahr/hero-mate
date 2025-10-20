@@ -1,0 +1,55 @@
+/* Comparison Component Styles */
+
+#comparison {
+    position: relative;
+  }
+  
+  /* Responsive table adjustments */
+  @media (max-width: 768px) {
+    #comparison table {
+      font-size: 0.875rem;
+    }
+  
+    #comparison th,
+    #comparison td {
+      padding: 0.75rem 0.5rem;
+    }
+  }
+  
+  /* Smooth hover transitions */
+  #comparison tbody tr {
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Sticky column for feature names */
+  #comparison td:first-child,
+  #comparison th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+  }
+  
+  /* Checkmark and X styling */
+  #comparison .inline-flex svg {
+    transition: transform 0.2s ease;
+  }
+  
+  #comparison tbody tr:hover .inline-flex svg {
+    transform: scale(1.1);
+  }
+  
+  /* Background gradient animation */
+  @keyframes gradientShift {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  #comparison .absolute svg {
+    animation: gradientShift 8s ease-in-out infinite;
+  }
+  

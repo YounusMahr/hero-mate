@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgot - Heromate</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/login.css">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: 'var(--color-blue)',
+            cta: 'var(--color-green)',
+            surface: 'var(--bg-surface)',
+            primary: 'var(--text-primary)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['"Exo 2"', 'Inter', 'ui-sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class=" min-h-screen flex items-center justify-center">
+  <main id="main" class="login-page relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background image with blur effect using custom CSS -->
+    <div class="login-page__bg absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+      <img src="../public/img/bg.png" 
+           alt="" 
+           class="login-page__bg-image w-full h-full object-cover" />
+    </div>
+
+    <!-- Login card container with 60% height, centered, using Tailwind -->
+    <div class="relative z-10 w-full max-w-md  px-4 flex items-center justify-center">
+      <!-- Login card with Tailwind styling -->
+      <div class="w-full bg-white rounded-3xl shadow-2xl p-8 sm:p-10 flex flex-col justify-center h-full max-h-[600px]">
+        <!-- Logo -->
+        <div class="flex justify-center mb-2">
+          <img src="/public/icons/logo.png" 
+               alt="Heromate" 
+               class="h-12 w-auto" />
+          <h1 class="sr-only">Heromate Login</h1>
+        </div>
+
+        <!-- Description -->
+        <p class="text-center text-sm leading-relaxed text-gray-600 mb-2">
+          Access your HeroMate workspace with a secure login to manage and grow your business.
+        </p>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="flex flex-col gap-3" novalidate>
+          <!-- Email Field -->
+          <div class="flex flex-col gap-1">
+            <label for="email" class="text-sm font-semibold text-gray-800">Email</label>
+            <div class="relative flex items-center">
+              <svg class="absolute left-3 w-5 h-5 text-gray-400 pointer-events-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <input 
+                id="email" 
+                type="email" 
+                name="email" 
+                placeholder="Email" 
+                class="w-full pl-10 pr-4 py-3 border border-blue-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                required 
+                aria-describedby="emailError" />
+            </div>
+            <span id="emailError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+            Forgot
+          </button>
+          <!-- Google Button -->
+          <button type="button" class="w-full flex items-center justify-center gap-2 py-3 bg-white border border-blue-200 hover:bg-blue-50 text-gray-800 font-medium rounded-lg transition-all" aria-label="Continue with Google">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30" fill="none">
+              <g clip-path="url(#clip0_629_2438)">
+                <path d="M29.6809 15.3375C29.6809 14.35 29.5934 13.4125 29.4434 12.5H15.3184V18.1375H23.4059C23.0434 19.9875 21.9809 21.55 20.4059 22.6125V26.3625H25.2309C28.0559 23.75 29.6809 19.9 29.6809 15.3375Z" fill="#4285F4"/>
+                <path d="M15.3191 30C19.3691 30 22.7566 28.65 25.2316 26.3625L20.4066 22.6125C19.0566 23.5125 17.3441 24.0625 15.3191 24.0625C11.4066 24.0625 8.09414 21.425 6.90664 17.8625H1.93164V21.725C4.39414 26.625 9.45664 30 15.3191 30Z" fill="#34A853"/>
+                <path d="M6.90586 17.8624C6.59336 16.9624 6.43086 15.9999 6.43086 14.9999C6.43086 13.9999 6.60586 13.0374 6.90586 12.1374V8.2749H1.93086C0.905858 10.2999 0.318359 12.5749 0.318359 14.9999C0.318359 17.4249 0.905858 19.6999 1.93086 21.7249L6.90586 17.8624Z" fill="#FBBC05"/>
+                <path d="M15.3191 5.9375C17.5316 5.9375 19.5066 6.7 21.0691 8.1875L25.3441 3.9125C22.7566 1.4875 19.3691 0 15.3191 0C9.45664 0 4.39414 3.375 1.93164 8.275L6.90664 12.1375C8.09414 8.575 11.4066 5.9375 15.3191 5.9375Z" fill="#EA4335"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_629_2438">
+                  <rect width="30" height="30" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="text-sm">Continue with Google</span>
+          </button>
+
+          <!-- Sign Up Link -->
+          <p class="text-center text-sm text-gray-600">
+            <a href="#!" class="text-blue-500 font-medium hover:opacity-80 transition-opacity">Sign up for a new account</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="../scripts/login.js"></script>
+</body>
+</html>

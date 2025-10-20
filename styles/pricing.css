@@ -1,0 +1,22 @@
+/* Pricing Component Styles */
+
+.pricing-card {
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(30, 144, 255, 0.15);
+}
+
+/* Enhanced green underline styling for "you" */
+.pricing-card span[class*="inline-block"] {
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pricing-card {
+    padding: 1.5rem;
+  }
+}

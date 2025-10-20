@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Heromate - Header </title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles --> 
+    <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/hero.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="../styles/pricing.css">
+    <link rel="stylesheet" href="../styles/comparison.css">
+    <!-- Using Tailwind CDN for development - will be replaced with production build later -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: 'var(--color-blue)',
+              cta: 'var(--color-green)',
+              surface: 'var(--bg-surface)',
+              primary: 'var(--text-primary)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+              display: ['"Exo 2"', 'Inter', 'ui-sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body>
+
+    <!-- Component mount points -->
+    <header class="c-header" role="banner">
+        <div class="c-header__inner container">
+          <!-- Logo -->
+          <a href="#" class="c-header__brand" aria-label="Heromate home">
+            <img src="../public/icons/logo.png" alt="Heromate" class="w-full h-10">
+          </a>
+      
+          <!-- Mobile menu toggle -->
+          <button class="c-header__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="c-header__bar"></span>
+            <span class="c-header__bar"></span>
+            <span class="c-header__bar"></span>
+          </button>
+      
+          <!-- Navigation -->
+          <nav class="c-header__nav" aria-label="Primary">
+            <ul class="c-header__list">
+              <li><a class="pill pill--active" href="#">Home</a></li>
+              <li>
+                <button class="link-with-caret" type="button" aria-haspopup="true" aria-expanded="false">
+                  Services
+                  <svg class="caret" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill="currentColor" d="M5.5 7.5l4.5 4 4.5-4" />
+                  </svg>
+                </button>
+              </li>
+              <li><a class="link" href="#">Price Estimator</a></li>
+              <li><a class="link" href="#">Jobs</a></li>
+            </ul>
+          </nav>
+      
+          <!-- Action buttons -->
+          <div class="c-header__actions">
+            <a class="link" href="./login.html">Login</a>
+            <a class="btn btn--cta" href="#">Become a Hero</a>
+          </div>
+        </div>
+      
+        <!-- Mobile drawer -->
+        <div class="c-header__drawer" id="mobile-menu" hidden>
+          <nav class="c-header__drawer-nav" aria-label="Mobile">
+            <a class="pill pill--active" href="#">Home</a>
+            <button class="link-with-caret" type="button" aria-haspopup="true" aria-expanded="false">
+              Services
+              <svg class="caret" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill="currentColor" d="M5.5 7.5l4.5 4 4.5-4" />
+              </svg>
+            </button>
+            <a class="link" href="#">Price Estimator</a>
+            <a class="link" href="#">Jobs</a>
+            <hr class="divider" />
+            <a class="link" href="./login.html">Login</a>
+            <a class="btn btn--cta" href="#">Become a Hero</a>
+          </nav>
+        </div>
+      </header>
+
+<!-- Pricing Section -->
+<main id="main" >
+  <section id="pricing" class="bg-white py-12 md:py-16 lg:py-20 relative overflow-hidden" aria-label="Pricing Plans">
+    <!-- Enhanced decorative SVG background elements with more pen strokes -->
+    <!-- Left side pen strokes -->
+    <div class="absolute top-10 left-0 w-24 h-32 opacity-30" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" fill="none">
+        <path d="M20 10 Q 30 40, 25 80 Q 20 120, 30 150" stroke="var(--color-blue)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M40 20 Q 45 50, 40 90 Q 35 130, 45 150" stroke="var(--color-blue)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+        <path d="M10 30 Q 15 60, 10 100" stroke="var(--color-blue)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      </svg>
+    </div>
+  
+    <!-- Right side pen strokes -->
+    <div class="absolute top-20 right-0 w-24 h-40 opacity-25" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" fill="none">
+        <path d="M80 20 Q 70 50, 75 100 Q 80 140, 70 150" stroke="var(--color-blue)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M60 10 Q 55 45, 60 95 Q 65 135, 55 150" stroke="var(--color-blue)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+        <path d="M90 40 Q 85 70, 90 120" stroke="var(--color-blue)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      </svg>
+    </div>
+  
+    <!-- Bottom right circular elements -->
+    <div class="absolute bottom-0 right-0 w-40 h-40 opacity-15" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="40" stroke="var(--color-blue)" stroke-width="2"/>
+        <circle cx="50" cy="50" r="30" stroke="var(--color-blue)" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="50" cy="50" r="20" stroke="var(--color-blue)" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
+  
+    <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 relative z-10">
+      <!-- Centered header with image positioned to the right -->
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-12 md:mb-16">
+        <!-- Centered heading and description -->
+        <div class="text-center flex-1">
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-[color:var(--text-primary)] text-balance leading-tight">
+            Pick a plan that<br class="hidden sm:inline" />
+            works for <span class="relative inline-block">
+              you
+              <span class="absolute bottom-0 left-0 right-0 h-1 bg-[color:var(--color-green)]"></span>
+            </span>
+          </h2>
+          <p class="mt-4 md:mt-6 text-sm md:text-base text-[color:rgba(46,50,56,0.8)] max-w-2xl mx-auto">
+            Pricing plans for businesses at every stage of growth. Try our risk-free for 14 days. No credit card required.
+          </p>
+        </div>
+  
+        <!-- Right: Man Image Placeholder -->
+        <div class="flex-shrink-0 w-full lg:w-auto">
+          <div class="relative w-full max-w-xs lg:max-w-sm">
+            <img src="/public/img/man.png" 
+                 alt="Professional using Heromate platform" 
+                 class="w-full h-auto rounded-2xl shadow-lg object-cover" />
+          </div>
+        </div>
+      </div>
+  
+      <!-- Pricing Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Card 1: Pay As You Go -->
+        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-white p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 w-fit mb-4">
+            <span class="h-5 w-5 rounded-full bg-[color:var(--color-blue)] flex items-center justify-center">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+            </span>
+            <span class="text-xs md:text-sm font-bold text-white bg-[color:var(--color-blue)] px-3 py-1 rounded-full">
+              PAY AS YOU GO (PAYG)
+            </span>
+          </div>
+  
+          <!-- Price -->
+          <div class="mb-6">
+            <p class="text-4xl md:text-5xl font-extrabold text-[color:var(--text-primary)]">
+              AUD $0<span class="text-lg md:text-2xl font-semibold">/month</span>
+            </p>
+            <p class="text-xs md:text-sm text-[color:rgba(46,50,56,0.7)] mt-2">
+              AUD $4.00 to unlock each job
+            </p>
+          </div>
+  
+          <!-- CTA Button -->
+          <button class="w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
+            Start free 14-day Trial
+          </button>
+          <p class="text-xs text-[color:rgba(46,50,56,0.6)] text-center mb-6">
+            No credit card required
+          </p>
+  
+          <!-- Description -->
+          <p class="text-sm md:text-base font-semibold text-[color:var(--text-primary)] mb-3">
+            Startups, individuals, and small businesses who want to test the platform
+          </p>
+  
+          <!-- Ideal For -->
+          <div class="mb-6 pb-6 border-b border-[color:var(--color-blue)]/20">
+            <p class="text-xs font-bold text-[color:rgba(46,50,56,0.7)] uppercase tracking-wide mb-3">
+              Ideal For:
+            </p>
+            <p class="text-sm text-[color:rgba(46,50,56,0.8)]">
+              Side hustlers, casual heroes, or those with low volume
+            </p>
+          </div>
+  
+          <!-- Features -->
+          <div class="space-y-3 flex-grow">
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">No monthly fee or subscription</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">AUD $4.00 to unlock and access each job post</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Pay jobs unlock for end of each month (paid valid)</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">View limited job details before unlocking</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Unlimited profile visibility</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Messaging enabled only after unlocking</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Card 2: Basic -->
+        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-white p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 w-fit mb-4">
+            <span class="h-5 w-5 rounded-full bg-[color:var(--color-blue)] flex items-center justify-center">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+            </span>
+            <span class="text-xs md:text-sm font-bold text-white bg-[color:var(--color-blue)] px-3 py-1 rounded-full">
+              BASIC
+            </span>
+          </div>
+  
+          <!-- Price -->
+          <div class="mb-6">
+            <p class="text-4xl md:text-5xl font-extrabold text-[color:var(--text-primary)]">
+              AUD $39<span class="text-lg md:text-2xl font-semibold">/month</span>
+            </p>
+            <p class="text-xs md:text-sm text-[color:rgba(46,50,56,0.7)] mt-2">
+              AUD $2.00 to unlock each job
+            </p>
+          </div>
+  
+          <!-- CTA Button -->
+          <button class="w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
+            Start free 14-day Trial
+          </button>
+          <p class="text-xs text-[color:rgba(46,50,56,0.6)] text-center mb-6">
+            No credit card required
+          </p>
+  
+          <!-- Description -->
+          <p class="text-sm md:text-base font-semibold text-[color:var(--text-primary)] mb-3">
+            Full-time or semi-active freelance ready to access jobs and customer base
+          </p>
+  
+          <!-- Ideal For -->
+          <div class="mb-6 pb-6 border-b border-[color:var(--color-blue)]/20">
+            <p class="text-xs font-bold text-[color:rgba(46,50,56,0.7)] uppercase tracking-wide mb-3">
+              Ideal For:
+            </p>
+            <p class="text-sm text-[color:rgba(46,50,56,0.8)]">
+              Heroes seeking consistent work, medium to high volume engagement
+            </p>
+          </div>
+  
+          <!-- Features -->
+          <div class="space-y-3 flex-grow">
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">AUD $39/month subscription fee</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">AUD $2.00 to unlock and access each job post</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Pay jobs access fee per job (paid valid)</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">View some job details via SMS/email</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Analytics dashboard</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Card 3: Pro -->
+        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-white p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 w-fit mb-4">
+            <span class="h-5 w-5 rounded-full bg-[color:var(--color-blue)] flex items-center justify-center">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+            </span>
+            <span class="text-xs md:text-sm font-bold text-white bg-[color:var(--color-blue)] px-3 py-1 rounded-full">
+              PRO
+            </span>
+          </div>
+  
+          <!-- Price -->
+          <div class="mb-6">
+            <p class="text-4xl md:text-5xl font-extrabold text-[color:var(--text-primary)]">
+              AUD $89<span class="text-lg md:text-2xl font-semibold">/month</span>
+            </p>
+            <p class="text-xs md:text-sm text-[color:rgba(46,50,56,0.7)] mt-2">
+              No job unlocking fee ever
+            </p>
+          </div>
+  
+          <!-- CTA Button -->
+          <button class="w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
+            Start free 14-day Trial
+          </button>
+          <p class="text-xs text-[color:rgba(46,50,56,0.6)] text-center mb-6">
+            No credit card required
+          </p>
+  
+          <!-- Description -->
+          <p class="text-sm md:text-base font-semibold text-[color:var(--text-primary)] mb-3">
+            High-performing service providers wanting maximum exposure and customer acquisition
+          </p>
+  
+          <!-- Ideal For -->
+          <div class="mb-6 pb-6 border-b border-[color:var(--color-blue)]/20">
+            <p class="text-xs font-bold text-[color:rgba(46,50,56,0.7)] uppercase tracking-wide mb-3">
+              Ideal For:
+            </p>
+            <p class="text-sm text-[color:rgba(46,50,56,0.8)]">
+              Established businesses, teams of Heroes, serious customer acquisition
+            </p>
+          </div>
+  
+          <!-- Features -->
+          <div class="space-y-3 flex-grow">
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">AUD $89/month platform fee</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Unlock every job if you like</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">See top-tier exposure in Hero badges</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Featured Hero status in emails and landing pages</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Unlimited messaging on all jobs</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
+              <span class="text-sm text-[color:rgba(46,50,56,0.85)]">5% discount on verified reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- // pricing section -->
+
+  <section id="process" class="relative bg-white py-12 md:py-16 lg:py-20 overflow-hidden" aria-label="How HeroMate Works">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <!-- Left side: HeroMate logo/image -->
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-40 lg:w-48 opacity-40">
+        <img src="/placeholder.svg?height=300&width=300" alt="" class="w-full h-auto" />
+      </div>
+      
+      <!-- Right side: Light blue decorative shapes -->
+      <svg class="absolute right-0 top-0 w-32 md:w-48 lg:w-64 h-auto opacity-30" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="80" fill="#B9E8FF" opacity="0.5" />
+        <circle cx="100" cy="100" r="60" fill="#D7F1FF" opacity="0.6" />
+      </svg>
+      
+      <svg class="absolute right-10 bottom-20 w-24 md:w-32 lg:w-40 h-auto opacity-25" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 75 Q 50 10, 90 75 T 150 75" stroke="#1E90FF" stroke-width="3" fill="none" opacity="0.4" />
+        <path d="M20 85 Q 60 20, 100 85 T 160 85" stroke="#1E90FF" stroke-width="2" fill="none" opacity="0.3" />
+      </svg>
+    </div>
+  
+    <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 relative z-10">
+      <!-- Heading -->
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[color:var(--text-primary)] text-balance">
+          How HeroMate Works
+        </h2>
+        <p class="mt-3 md:mt-4 text-sm md:text-base text-[color:rgba(46,50,56,0.75)]">
+          Simple, transparent, and designed for your success
+        </p>
+      </div>
+  
+      <!-- Process Flow Container -->
+      <div class="relative">
+        <!-- Desktop: Circular layout -->
+        <div class="hidden lg:block">
+          <div class="relative w-full aspect-square max-w-2xl mx-auto">
+            <!-- SVG for connecting lines -->
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <!-- Lines connecting steps to center -->
+              <line x1="250" y1="250" x2="250" y2="80" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
+              <line x1="250" y1="250" x2="420" y2="130" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
+              <line x1="250" y1="250" x2="420" y2="370" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
+              <line x1="250" y1="250" x2="80" y2="370" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
+              <line x1="250" y1="250" x2="80" y2="130" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
+            </svg>
+  
+            <!-- Center Logo -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              <div class="h-24 w-24 rounded-full bg-[color:var(--color-blue)] shadow-lg grid place-items-center">
+                <img src="/placeholder.svg?height=80&width=80" alt="HeroMate" class="h-16 w-16" />
+              </div>
+            </div>
+  
+            <!-- Step 1: Top -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40">
+              <div class="flex flex-col items-center">
+                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">1</div>
+                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
+                  <p class="text-sm font-medium text-[color:var(--text-primary)]">Pricing is in AUD and inclusive of GST</p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Step 2: Top Right -->
+            <div class="absolute top-12 right-12 w-40">
+              <div class="flex flex-col items-center">
+                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">2</div>
+                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
+                  <p class="text-sm font-medium text-[color:var(--text-primary)]">Cancel anytime - no lock-in contract</p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Step 3: Bottom Right -->
+            <div class="absolute bottom-12 right-12 w-40">
+              <div class="flex flex-col items-center">
+                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">3</div>
+                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
+                  <p class="text-sm font-medium text-[color:var(--text-primary)]">Job unlocks (PAYG) are non-refundable once a job is accessed</p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Step 4: Bottom Left -->
+            <div class="absolute bottom-12 left-12 w-40">
+              <div class="flex flex-col items-center">
+                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">4</div>
+                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
+                  <p class="text-sm font-medium text-[color:var(--text-primary)]">The job unlock fee is automatically deducted on the last working day of each month.</p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Step 5: Top Left -->
+            <div class="absolute top-12 left-12 w-40">
+              <div class="flex flex-col items-center">
+                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">5</div>
+                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
+                  <p class="text-sm font-medium text-[color:var(--text-primary)]">HeroMate reserves the right to modify plan pricing or features with 30 days' notice</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Mobile/Tablet: Stacked layout -->
+        <div class="lg:hidden">
+          <div class="space-y-4 md:space-y-6">
+            <!-- Step 1 -->
+            <div class="flex gap-4 items-start">
+              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">1</div>
+              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
+                <p class="text-sm font-medium text-[color:var(--text-primary)]">Pricing is in AUD and inclusive of GST</p>
+              </div>
+            </div>
+  
+            <!-- Step 2 -->
+            <div class="flex gap-4 items-start">
+              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">2</div>
+              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
+                <p class="text-sm font-medium text-[color:var(--text-primary)]">Cancel anytime - no lock-in contract</p>
+              </div>
+            </div>
+  
+            <!-- Step 3 -->
+            <div class="flex gap-4 items-start">
+              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">3</div>
+              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
+                <p class="text-sm font-medium text-[color:var(--text-primary)]">Job unlocks (PAYG) are non-refundable once a job is accessed</p>
+              </div>
+            </div>
+  
+            <!-- Step 4 -->
+            <div class="flex gap-4 items-start">
+              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">4</div>
+              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
+                <p class="text-sm font-medium text-[color:var(--text-primary)]">The job unlock fee is automatically deducted on the last working day of each month.</p>
+              </div>
+            </div>
+  
+            <!-- Step 5 -->
+            <div class="flex gap-4 items-start">
+              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">5</div>
+              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
+                <p class="text-sm font-medium text-[color:var(--text-primary)]">HeroMate reserves the right to modify plan pricing or features with 30 days' notice</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- //-- Comparison Section ---- -->
+
+  <section id="comparison" class="relative py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-white to-blue-50 overflow-hidden" aria-label="Heromate Plan Comparison">
+    <!-- Background decorative SVGs -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <!-- Left curved waves -->
+      <svg class="absolute left-0 top-1/4 w-64 h-64 text-blue-100 opacity-40" viewBox="0 0 200 200" fill="none">
+        <path d="M50,100 Q100,50 150,100 T250,100" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M40,120 Q100,70 160,120 T260,120" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M30,140 Q100,90 170,140 T270,140" stroke="currentColor" stroke-width="2" fill="none"/>
+      </svg>
+      
+      <!-- Right curved waves -->
+      <svg class="absolute right-0 bottom-1/4 w-80 h-80 text-blue-100 opacity-30" viewBox="0 0 200 200" fill="none">
+        <path d="M50,100 Q100,50 150,100 T250,100" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M40,120 Q100,70 160,120 T260,120" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M30,140 Q100,90 170,140 T270,140" stroke="currentColor" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+  
+    <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-8 md:mb-10">
+        <svg class="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+        </svg>
+        <h2 class="font-display text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900">
+          Heromate Plan Comparison
+        </h2>
+      </div>
+  
+      <!-- Comparison Table Container -->
+      <div class="relative rounded-2xl border border-blue-200 bg-white shadow-lg overflow-hidden">
+        <!-- Product Image (Right side) -->
+        <div class="absolute top-0 right-0 w-48 h-full hidden lg:flex items-center justify-center pointer-events-none">
+          <img src="/placeholder.svg?height=400&width=300" 
+               alt="Heromate water bottle product" 
+               class="h-full w-auto object-cover opacity-80" />
+        </div>
+  
+        <!-- Table Wrapper -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm md:text-base">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="px-4 md:px-6 py-4 text-left font-semibold text-gray-900 sticky left-0 bg-gray-50 z-10">
+                  Feature
+                </th>
+                <th class="px-4 md:px-6 py-4 text-center font-semibold text-gray-900 min-w-[120px]">
+                  PAYG
+                </th>
+                <th class="px-4 md:px-6 py-4 text-center font-semibold text-gray-900 min-w-[120px]">
+                  STANDARD
+                </th>
+                <th class="px-4 md:px-6 py-4 text-center font-semibold text-gray-900 min-w-[120px]">
+                  PREMIUM PRO
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <!-- Monthly Fee -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Monthly Fee
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700">$0</td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700">$39</td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700">$69</td>
+              </tr>
+  
+              <!-- Job Unlock Fee -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Job Unlock Fee
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700">$3/job</td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700">$0</td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700">$0</td>
+              </tr>
+  
+              <!-- Unlimited Job Access -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Unlimited Job Access
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+              </tr>
+  
+              <!-- Verified Hero Badge -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Verified Hero Badge
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+              </tr>
+  
+              <!-- Top Hero Badge -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Top Hero Badge
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+              </tr>
+  
+              <!-- Dedicated Support -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Dedicated Support
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+              </tr>
+  
+              <!-- Customer Messaging -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Customer Messaging
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700 text-xs md:text-sm">After Unlock</td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700 text-xs md:text-sm">Unlimited</td>
+                <td class="px-4 md:px-6 py-4 text-center text-gray-700 text-xs md:text-sm">Unlimited</td>
+              </tr>
+  
+              <!-- Featured in Marketing -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Featured in Marketing
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+              </tr>
+  
+              <!-- Direct Bookings from Customers -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Direct Bookings from Customers
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+              </tr>
+  
+              <!-- Analytics Dashboard -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  Analytics Dashboard
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+              </tr>
+  
+              <!-- SMS Job Alerts -->
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-white hover:bg-blue-50 z-10">
+                  SMS Job Alerts
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
+                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                </td>
+              </tr>
+  
+              <!-- Commission per Job -->
+              <tr class="hover:bg-blue-50 transition-colors bg-blue-50">
+                <td class="px-4 md:px-6 py-4 font-medium text-gray-900 sticky left-0 bg-blue-50 hover:bg-blue-100 z-10">
+                  Commission per Job
+                </td>
+                <td class="px-4 md:px-6 py-4 text-center font-semibold text-gray-900">$0</td>
+                <td class="px-4 md:px-6 py-4 text-center font-semibold text-gray-900">$0</td>
+                <td class="px-4 md:px-6 py-4 text-center font-semibold text-gray-900">5%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+
+   <!-- Email support CTA -->
+   <section id="support-cta" class="bg-[#D7F1FF] mb-[-2rem]" aria-label="We're here when you need a mate">
+    <div class="mx-auto max-w-[var(--container-max)] w-[80%] px-4 md:px-6">
+      <div class="relative rounded-2xl bg-[color:var(--color-blue)] text-white p-6 md:p-8 lg:p-10 shadow-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 items-center">
+          <div>
+            <h3 class="font-display text-2xl md:text-3xl lg:text-4xl font-extrabold text-pretty">
+              We're Here When You Need a Mate
+            </h3>
+            <p class="mt-3 text-white/90 text-sm md:text-base">
+              Whether you have a question, need a hand navigating the platform, or just want to say g'day — we're your mates and we're here to help.
+            </p>
+          </div>
+          <div class="justify-self-start lg:justify-self-end">
+            <div class="inline-flex items-center gap-3 rounded-2xl bg-white text-[color:var(--text-primary)] px-4 py-3 md:px-5 md:py-4 shadow-sm ring-1 ring-black/5">
+              <span class="grid place-items-center h-9 w-9 rounded-xl bg-[color:var(--bg-surface)] text-[color:var(--color-blue)] ring-1 ring-[color:var(--color-blue)]/20">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" />
+                  <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" />
+                </svg>
+              </span>
+              <span class="text-sm md:text-base font-semibold select-all">support@heromate.com.au</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-4 left-6 right-6 h-4 bg-black/10 rounded-b-3xl" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo content removed for production -->
+</main>
+
+<!-- Footer Before    -->
+<section class="heromate-heading-section" aria-label="Heromate brand heading">
+  <div class="heromate-heading-wrapper">
+    <h2 class="heromate-heading-text text-[17rem]">heromate</h2>
+  </div>
+</section>
+
+
+<!-- Footer component -->
+<footer class="site-footer bg-[#000000] text-white">
+  <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 py-12 md:py-16">
+    <!-- Updated grid layout and spacing for cleaner design -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
+      <!-- Brand + acknowledgement -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <!-- Simple placeholder logo mark; replace with your SVG later -->
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-[color:var(--color-blue)] text-white font-bold text-sm">H</span>
+          <span class="text-lg font-semibold tracking-tight">heromate<span aria-hidden="true">™</span></span>
+        </div>
+        <p class="text-sm text-white/70 leading-relaxed">
+          We acknowledge the Traditional Custodians of the lands, skies, and waters across Australia, and their enduring
+          connection to Country. At HEROMATE, we pay our deepest respects to Elders past and present, and we honour the
+          strength, resilience, and wisdom of all Aboriginal and Torres Strait Islander peoples.
+        </p>
+      </div>
+
+      <!-- Quick links: Locations -->
+      <nav aria-label="Locations" class="space-y-3">
+        <!-- Updated heading color to blue -->
+        <h3 class="text-[color:var(--color-blue)] font-semibold text-sm uppercase tracking-wide">Locations</h3>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Sydney</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Melbourne</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Brisbane</a></li>
+        </ul>
+      </nav>
+
+      <!-- Quick links: Top Services -->
+      <nav aria-label="Top Services" class="space-y-3">
+        <!-- Updated heading color to blue -->
+        <h3 class="text-[color:var(--color-blue)] font-semibold text-sm uppercase tracking-wide">Top Services</h3>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Furniture Assembling</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Airport Pickup</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Dog Mending</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Cladding</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Gyprock Fixing</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Cleaning</a></li>
+        </ul>
+      </nav>
+
+      <!-- Quick links: Discover -->
+      <nav aria-label="Discover" class="space-y-3">
+        <!-- Updated heading color to blue -->
+        <h3 class="text-[color:var(--color-blue)] font-semibold text-sm uppercase tracking-wide">Discover</h3>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Who is Hero?</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Why Us?</a></li>
+          <li><a class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)] rounded px-1" href="#!">Can I be Hero?</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Bottom bar -->
+    <!-- Adjusted layout and spacing for cleaner footer credit section -->
+    <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center md:items-center justify-between gap-6 text-xs text-white/60">
+      <p>
+        © <span id="year"></span> HEROMATE™ | ABN 21 588 535 560 | All rights reserved.
+      </p>
+      <div class="flex items-center gap-4">
+        <!-- Social icons -->
+        <a aria-label="YouTube" href="#!" class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)]">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/80 group-hover:text-white"><path d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.8 2.5 12 2.5 12 2.5h0s-4.8 0-8.2.3c-.6.1-1.6.1-2.4 1C.7 4.5.5 6.2.5 6.2S.3 8.2.3 10.3v1.5C.3 14 0.5 16 0.5 16s.2 1.7.9 2.4c.9.9 2 .9 2.4 1 1.7.2 7.2.3 8.2.3 0 0 4.8 0 8.2-.3.6-.1 1.6-.1 2.4-1 .7-.7.9-2.4.9-2.4s.2-2 .2-4.2v-1.5c0-2.1-.2-4.1-.2-4.1zM9.8 13.7V7.9l6 2.9-6 2.9z"/></svg>
+        </a>
+        <a aria-label="Facebook" href="#!" class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)]">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/80 group-hover:text-white"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.3V12h2.3V9.7c0-2.2 1.3-3.4 3.3-3.4.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 2.9h-1.9v7A10 10 0 0022 12z"/></svg>
+        </a>
+        <a aria-label="LinkedIn" href="#!" class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-blue)]">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/80 group-hover:text-white"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-.9 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6v8.6h-4V15c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V23h-4V8.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Scripts --> 
+<script type="module" src="../scripts/include.js"></script>
+<script type="module" src="../components/header.js"></script>
+<script type="module" src="../components/hero.js"></script>
+<script type="module" src="../components/why-us.js"></script>
+<script type="module" src="../components/community.js"></script>
+<script type="module" src="../components/footer.js"></script>
+</body>
+</html>
+
+
+
+  

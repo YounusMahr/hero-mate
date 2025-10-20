@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanks Page - Heromate</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/login.css">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: 'var(--color-blue)',
+            cta: 'var(--color-green)',
+            surface: 'var(--bg-surface)',
+            primary: 'var(--text-primary)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['"Exo 2"', 'Inter', 'ui-sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class=" min-h-screen flex items-center justify-center">
+  <main id="main" class="login-page relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background image with blur effect using custom CSS -->
+    <div class="login-page__bg absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+      <img src="../public/img/bg.png" 
+           alt="" 
+           class="login-page__bg-image w-full h-full object-cover" />
+    </div>
+
+    <!-- Login card container with 60% height, centered, using Tailwind -->
+    <div class="relative z-10 w-full max-w-md  px-4 flex items-center justify-center">
+      <!-- Login card with Tailwind styling -->
+      <div class="w-full bg-white rounded-3xl shadow-2xl p-8 sm:p-10 flex flex-col justify-center h-full max-h-[600px]">
+        <!-- Logo -->
+        <div class="flex justify-center mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 200 200" fill="none">
+                <path d="M200 104.688C200 111.68 198.32 118.164 194.961 124.102C191.602 130.039 187.109 134.688 181.445 137.93C181.602 138.984 181.68 140.625 181.68 142.852C181.68 153.438 178.125 162.422 171.094 169.844C164.023 177.305 155.508 181.016 145.547 181.016C141.094 181.016 136.836 180.195 132.812 178.555C129.688 184.961 125.195 190.117 119.297 194.062C113.438 198.047 106.992 200 100 200C92.8516 200 86.3672 198.086 80.5859 194.18C74.7656 190.312 70.3125 185.117 67.1875 178.555C63.1641 180.195 58.9453 181.016 54.4531 181.016C44.4922 181.016 35.9375 177.305 28.7891 169.844C21.6406 162.422 18.0859 153.398 18.0859 142.852C18.0859 141.68 18.2422 140.039 18.5156 137.93C12.8516 134.648 8.35938 130.039 5 124.102C1.67969 118.164 0 111.68 0 104.688C0 97.2656 1.875 90.4297 5.58594 84.2578C9.29688 78.0859 14.2969 73.5156 20.5469 70.5469C18.9062 66.0938 18.0859 61.6016 18.0859 57.1484C18.0859 46.6016 21.6406 37.5781 28.7891 30.1562C35.9375 22.7344 44.4922 18.9844 54.4531 18.9844C58.9062 18.9844 63.1641 19.8047 67.1875 21.4453C70.3125 15.0391 74.8047 9.88281 80.7031 5.9375C86.5625 1.99219 93.0078 0 100 0C106.992 0 113.438 1.99219 119.297 5.89844C125.156 9.84375 129.688 15 132.812 21.4062C136.836 19.7656 141.055 18.9453 145.547 18.9453C155.508 18.9453 164.023 22.6562 171.094 30.1172C178.164 37.5781 181.68 46.5625 181.68 57.1094C181.68 62.0312 180.938 66.4844 179.453 70.5078C185.703 73.4766 190.703 78.0469 194.414 84.2188C198.125 90.4297 200 97.2656 200 104.688ZM95.7422 134.805L137.031 72.9688C138.086 71.3281 138.398 69.5312 138.047 67.6172C137.656 65.7031 136.68 64.1797 135.039 63.1641C133.398 62.1094 131.602 61.7578 129.688 62.0312C127.734 62.3438 126.172 63.2812 125 64.9219L88.6328 119.609L71.875 102.891C70.3906 101.406 68.6719 100.703 66.7578 100.781C64.8047 100.859 63.125 101.562 61.6406 102.891C60.3125 104.219 59.6484 105.898 59.6484 107.93C59.6484 109.922 60.3125 111.602 61.6406 112.969L84.6484 135.977L85.7812 136.875C87.1094 137.773 88.4766 138.203 89.8047 138.203C92.4219 138.164 94.4141 137.07 95.7422 134.805Z" fill="#1E90FF"/>
+              </svg>
+        </div> 
+
+        <!-- Description -->
+         <h3 class="text-center text-[15px] font-bold text-grey-600 mt-4" >
+            Ready to Play!
+         </h3>
+        <p class="text-center text-sm leading-relaxed text-gray-600 mb-2">
+            Your account has been <br/> login
+successfully.
+        </p>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="flex flex-col gap-3" novalidate>
+          <!-- OTP Inputs (layout only) -->
+          
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="../scripts/login.js"></script>
+</body>
+</html>
