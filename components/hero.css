@@ -2,6 +2,7 @@
 .hero {
   position: relative;
   overflow: hidden;
+  height: 90vh;
   background: var(--bg-surface);
   padding: clamp(3rem, 6vw, 6rem) 0 clamp(2rem, 5vw, 4rem);
 }

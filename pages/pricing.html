@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../components/header.css">
     <link rel="stylesheet" href="../components/hero.css">
     <link rel="stylesheet" href="../components/footer.css">
-    <link rel="stylesheet" href="../styles/pricing.css">
+    <link rel="stylesheet" href="../styles/process.css">
     <link rel="stylesheet" href="../styles/comparison.css">
     <!-- Using Tailwind CDN for development - will be replaced with production build later -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -101,7 +101,7 @@
 
 <!-- Pricing Section -->
 <main id="main" >
-  <section id="pricing" class="bg-white py-12 md:py-16 lg:py-20 relative overflow-hidden" aria-label="Pricing Plans">
+  <section id="pricing" class="bg-[#F5F7FA] py-12 md:py-16 lg:py-20 relative overflow-hidden" aria-label="Pricing Plans">
     <!-- Enhanced decorative SVG background elements with more pen strokes -->
     <!-- Left side pen strokes -->
     <div class="absolute top-10 left-0 w-24 h-32 opacity-30" aria-hidden="true">
@@ -129,38 +129,43 @@
         <circle cx="50" cy="50" r="20" stroke="var(--color-blue)" stroke-width="1" opacity="0.4"/>
       </svg>
     </div>
+
+      <!-- Centered heading and description -->
+      <div class="flex flex-col lg:flex-row items-center justify-end  gap-6 lg:gap-12 mb-8 md:mb-12">
+    <div class="text-center px-4 ">
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-[color:var(--text-primary)] text-balance leading-tight">
+        Pick a plan that<br class="hidden sm:inline" />
+        works for <span class="relative inline-block">
+          you
+          <span class="absolute bottom-0 left-0 right-0 h-1 bg-[color:var(--color-green)]"></span>
+        </span>
+      </h2>
+      <p class="mt-4 md:mt-6 text-sm px-6 md:text-base text-[color:rgba(46,50,56,0.8)] max-w-2xl mx-auto">
+        Pricing plans for businesses at every stage of growth. Try our risk-free for 14 days. No credit card required.
+      </p>
+    </div>
+       <!-- Right: Man Image Placeholder -->
+        <div class="flex-shrink-0 w-full lg:w-auto  ">
+          <div class="relative top-10   md:top-14 md:right-16 w-full max-w-xs lg:max-w-sm">
+            <img src="/public/img/man.png" 
+                 alt="Professional using Heromate platform" 
+                 class="w-full h-auto rounded-2xl object-cover" />
+          </div>
+        </div>
+      </div>
+
+    </div>
   
     <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 relative z-10">
       <!-- Centered header with image positioned to the right -->
       <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-12 md:mb-16">
-        <!-- Centered heading and description -->
-        <div class="text-center flex-1">
-          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-[color:var(--text-primary)] text-balance leading-tight">
-            Pick a plan that<br class="hidden sm:inline" />
-            works for <span class="relative inline-block">
-              you
-              <span class="absolute bottom-0 left-0 right-0 h-1 bg-[color:var(--color-green)]"></span>
-            </span>
-          </h2>
-          <p class="mt-4 md:mt-6 text-sm md:text-base text-[color:rgba(46,50,56,0.8)] max-w-2xl mx-auto">
-            Pricing plans for businesses at every stage of growth. Try our risk-free for 14 days. No credit card required.
-          </p>
-        </div>
+
   
-        <!-- Right: Man Image Placeholder -->
-        <div class="flex-shrink-0 w-full lg:w-auto">
-          <div class="relative w-full max-w-xs lg:max-w-sm">
-            <img src="/public/img/man.png" 
-                 alt="Professional using Heromate platform" 
-                 class="w-full h-auto rounded-2xl shadow-lg object-cover" />
-          </div>
-        </div>
-      </div>
   
       <!-- Pricing Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         <!-- Card 1: Pay As You Go -->
-        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-white p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-[#F5F7FA] p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
           <!-- Badge -->
           <div class="inline-flex items-center gap-2 w-fit mb-4">
             <span class="h-5 w-5 rounded-full bg-[color:var(--color-blue)] flex items-center justify-center">
@@ -209,49 +214,49 @@
           <!-- Features -->
           <div class="space-y-3 flex-grow">
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">No monthly fee or subscription</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">AUD $4.00 to unlock and access each job post</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Pay jobs unlock for end of each month (paid valid)</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">View limited job details before unlocking</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Unlimited profile visibility</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Messaging enabled only after unlocking</span>
@@ -260,7 +265,7 @@
         </div>
   
         <!-- Card 2: Basic -->
-        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-white p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-[#F5F7FA] p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
           <!-- Badge -->
           <div class="inline-flex items-center gap-2 w-fit mb-4">
             <span class="h-5 w-5 rounded-full bg-[color:var(--color-blue)] flex items-center justify-center">
@@ -309,41 +314,41 @@
           <!-- Features -->
           <div class="space-y-3 flex-grow">
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">AUD $39/month subscription fee</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">AUD $2.00 to unlock and access each job post</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Pay jobs access fee per job (paid valid)</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">View some job details via SMS/email</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Analytics dashboard</span>
@@ -352,7 +357,7 @@
         </div>
   
         <!-- Card 3: Pro -->
-        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-white p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+        <div class="pricing-card rounded-2xl border-2 border-[color:var(--color-blue)] bg-[#F5F7FA] p-6 md:p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
           <!-- Badge -->
           <div class="inline-flex items-center gap-2 w-fit mb-4">
             <span class="h-5 w-5 rounded-full bg-[color:var(--color-blue)] flex items-center justify-center">
@@ -401,49 +406,49 @@
           <!-- Features -->
           <div class="space-y-3 flex-grow">
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">AUD $89/month platform fee</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Unlock every job if you like</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">See top-tier exposure in Hero badges</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Featured Hero status in emails and landing pages</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">Unlimited messaging on all jobs</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="h-5 w-5 rounded-full bg-[color:var(--color-green)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              <span class="h-5 w-5 rounded-full  flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 3.41699C14.1421 3.41699 17.5 6.77486 17.5 10.917C17.5 15.0591 14.1421 18.417 10 18.417C5.85787 18.417 2.5 15.0591 2.5 10.917C2.50001 6.77487 5.85788 3.417 10 3.41699ZM9.10547 12.0488L7.32031 10.2646L6.66699 10.917L6.01465 11.5693L9.22949 14.7842L9.87695 14.0078L14.043 9.00781L12.625 7.82617L9.10547 12.0488Z" fill="#1A1A1A"/>
                 </svg>
               </span>
               <span class="text-sm text-[color:rgba(46,50,56,0.85)]">5% discount on verified reviews</span>
@@ -454,165 +459,68 @@
     </div>
   </section>
 
-  <!-- // pricing section -->
+ <!-- --- process section ---- -->
 
-  <section id="process" class="relative bg-white py-12 md:py-16 lg:py-20 overflow-hidden" aria-label="How HeroMate Works">
-    <!-- Background decorative elements -->
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <!-- Left side: HeroMate logo/image -->
-      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-40 lg:w-48 opacity-40">
-        <img src="/placeholder.svg?height=300&width=300" alt="" class="w-full h-auto" />
+ <div class="process-container md:px-14 bg-[#F5F7FA]">
+  <div class="grid-layout">
+      <!-- Connecting Lines -->
+      <div class="connecting-line line-h1"></div>
+      <div class="connecting-line line-h2"></div>
+      <div class="connecting-line line-h3"></div>
+      <div class="connecting-line line-h4"></div>
+      <div class="connecting-line line-v1"></div>
+      <div class="connecting-line line-v2"></div>
+      <div class="connecting-line line-v3"></div>
+
+      <!-- Card 1 -->
+      <div class="process-card card-top-left">
+          <div class="badge-number">1</div>
+          <p class="process-text">Pricing is in AUD and inclusive of GST</p>
       </div>
-      
-      <!-- Right side: Light blue decorative shapes -->
-      <svg class="absolute right-0 top-0 w-32 md:w-48 lg:w-64 h-auto opacity-30" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="80" fill="#B9E8FF" opacity="0.5" />
-        <circle cx="100" cy="100" r="60" fill="#D7F1FF" opacity="0.6" />
+
+      <!-- Card 2 -->
+      <div class="process-card card-top-center">
+          <div class="badge-number">2</div>
+          <p class="process-text">Cancel anytime – no lock-in contract</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="process-card card-top-right">
+          <div class="badge-number">3</div>
+          <p class="process-text">Job unlocks (PAYG) are non-refundable once a job is accessed</p>
+      </div>
+
+
+      <!-- Card 4 -->
+      <div class="process-card card-bottom-left">
+          <div class="badge-number">4</div>
+          <p class="process-text">The job unlock fee is automatically deducted on the last working day of each month.</p>
+      </div>
+
+
+       <!-- logo -->
+       <div class=" flex justify-center items-center">
+        <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 183 183" fill="none">
+          <rect x="0.212891" y="0.238037" width="182.562" height="182.673" rx="91.2812" fill="#1E90FF"/>
+          <path d="M143.634 150.753L143.663 150.745C143.451 149.352 143.217 147.982 142.938 146.633L142.909 146.449H142.902C139.483 129.713 131.21 116.73 118.267 107.787C90.3887 88.551 51.0679 96.8494 49.406 97.2086L38 99.6938V152.886H66.9836V124.215C77.6063 123.702 91.97 124.831 101.897 131.729C107.476 135.607 111.305 141.047 113.494 148.245C113.94 149.712 114.321 151.266 114.636 152.886H129.351H144L143.634 150.753Z" fill="white"/>
+          <path d="M115.009 30.0073V58.678C104.394 59.1911 90.03 58.0549 80.1028 51.1639C74.6487 47.3813 70.8711 42.1031 68.6601 35.1535C68.1477 33.5334 67.7157 31.8107 67.3643 30H52.6639H38L38.3441 32.1552H38.3368C38.4539 32.925 38.5784 33.6874 38.7175 34.4498L38.7248 34.5084C41.8874 52.1756 50.2919 65.8255 63.7331 75.1062C78.5288 85.318 96.5529 87.7738 110.455 87.7738C122.74 87.7738 131.811 85.8605 132.587 85.6919L143.993 83.1994V30.0073H115.009Z" fill="white"/>
       </svg>
+       </div>
       
-      <svg class="absolute right-10 bottom-20 w-24 md:w-32 lg:w-40 h-auto opacity-25" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 75 Q 50 10, 90 75 T 150 75" stroke="#1E90FF" stroke-width="3" fill="none" opacity="0.4" />
-        <path d="M20 85 Q 60 20, 100 85 T 160 85" stroke="#1E90FF" stroke-width="2" fill="none" opacity="0.3" />
-      </svg>
-    </div>
-  
-    <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 relative z-10">
-      <!-- Heading -->
-      <div class="text-center mb-12 md:mb-16">
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[color:var(--text-primary)] text-balance">
-          How HeroMate Works
-        </h2>
-        <p class="mt-3 md:mt-4 text-sm md:text-base text-[color:rgba(46,50,56,0.75)]">
-          Simple, transparent, and designed for your success
-        </p>
+
+      <!-- Card 5 -->
+      <div class="process-card card-bottom-right">
+          <div class="badge-number">5</div>
+          <p class="process-text">HeroMate reserves the right to modify plan pricing or features with 30 days' notice</p>
       </div>
-  
-      <!-- Process Flow Container -->
-      <div class="relative">
-        <!-- Desktop: Circular layout -->
-        <div class="hidden lg:block">
-          <div class="relative w-full aspect-square max-w-2xl mx-auto">
-            <!-- SVG for connecting lines -->
-            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-              <!-- Lines connecting steps to center -->
-              <line x1="250" y1="250" x2="250" y2="80" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
-              <line x1="250" y1="250" x2="420" y2="130" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
-              <line x1="250" y1="250" x2="420" y2="370" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
-              <line x1="250" y1="250" x2="80" y2="370" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
-              <line x1="250" y1="250" x2="80" y2="130" stroke="#1E90FF" stroke-width="2" opacity="0.3" />
-            </svg>
-  
-            <!-- Center Logo -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-              <div class="h-24 w-24 rounded-full bg-[color:var(--color-blue)] shadow-lg grid place-items-center">
-                <img src="/placeholder.svg?height=80&width=80" alt="HeroMate" class="h-16 w-16" />
-              </div>
-            </div>
-  
-            <!-- Step 1: Top -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40">
-              <div class="flex flex-col items-center">
-                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">1</div>
-                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
-                  <p class="text-sm font-medium text-[color:var(--text-primary)]">Pricing is in AUD and inclusive of GST</p>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Step 2: Top Right -->
-            <div class="absolute top-12 right-12 w-40">
-              <div class="flex flex-col items-center">
-                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">2</div>
-                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
-                  <p class="text-sm font-medium text-[color:var(--text-primary)]">Cancel anytime - no lock-in contract</p>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Step 3: Bottom Right -->
-            <div class="absolute bottom-12 right-12 w-40">
-              <div class="flex flex-col items-center">
-                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">3</div>
-                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
-                  <p class="text-sm font-medium text-[color:var(--text-primary)]">Job unlocks (PAYG) are non-refundable once a job is accessed</p>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Step 4: Bottom Left -->
-            <div class="absolute bottom-12 left-12 w-40">
-              <div class="flex flex-col items-center">
-                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">4</div>
-                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
-                  <p class="text-sm font-medium text-[color:var(--text-primary)]">The job unlock fee is automatically deducted on the last working day of each month.</p>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Step 5: Top Left -->
-            <div class="absolute top-12 left-12 w-40">
-              <div class="flex flex-col items-center">
-                <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md">5</div>
-                <div class="mt-3 bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 text-center">
-                  <p class="text-sm font-medium text-[color:var(--text-primary)]">HeroMate reserves the right to modify plan pricing or features with 30 days' notice</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Mobile/Tablet: Stacked layout -->
-        <div class="lg:hidden">
-          <div class="space-y-4 md:space-y-6">
-            <!-- Step 1 -->
-            <div class="flex gap-4 items-start">
-              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">1</div>
-              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
-                <p class="text-sm font-medium text-[color:var(--text-primary)]">Pricing is in AUD and inclusive of GST</p>
-              </div>
-            </div>
-  
-            <!-- Step 2 -->
-            <div class="flex gap-4 items-start">
-              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">2</div>
-              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
-                <p class="text-sm font-medium text-[color:var(--text-primary)]">Cancel anytime - no lock-in contract</p>
-              </div>
-            </div>
-  
-            <!-- Step 3 -->
-            <div class="flex gap-4 items-start">
-              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">3</div>
-              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
-                <p class="text-sm font-medium text-[color:var(--text-primary)]">Job unlocks (PAYG) are non-refundable once a job is accessed</p>
-              </div>
-            </div>
-  
-            <!-- Step 4 -->
-            <div class="flex gap-4 items-start">
-              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">4</div>
-              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
-                <p class="text-sm font-medium text-[color:var(--text-primary)]">The job unlock fee is automatically deducted on the last working day of each month.</p>
-              </div>
-            </div>
-  
-            <!-- Step 5 -->
-            <div class="flex gap-4 items-start">
-              <div class="h-10 w-10 rounded-full bg-[color:var(--color-blue)] text-white grid place-items-center font-bold text-sm shadow-md flex-shrink-0">5</div>
-              <div class="bg-white rounded-2xl border-2 border-[color:var(--color-blue)]/30 p-4 flex-1">
-                <p class="text-sm font-medium text-[color:var(--text-primary)]">HeroMate reserves the right to modify plan pricing or features with 30 days' notice</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</div>
+
 
 
   <!-- //-- Comparison Section ---- -->
 
-  <section id="comparison" class="relative py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-white to-blue-50 overflow-hidden" aria-label="Heromate Plan Comparison">
+  <section id="comparison" class="relative py-12 md:py-16 md:px-10 lg:py-20 bg-[#F5F7FA] overflow-hidden" aria-label="Heromate Plan Comparison">
     <!-- Background decorative SVGs -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <!-- Left curved waves -->
@@ -633,8 +541,21 @@
     <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
       <!-- Header -->
       <div class="flex items-center gap-3 mb-8 md:mb-10">
-        <svg class="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <g clip-path="url(#clip0_651_1127)">
+            <path d="M19.998 39.9976C31.0439 39.9976 39.998 31.0434 39.998 19.9976C39.998 8.95256 31.0439 -0.00244141 19.998 -0.00244141C8.95221 -0.00244141 -0.00195312 8.95256 -0.00195312 19.9976C-0.00195312 31.0434 8.95221 39.9976 19.998 39.9976Z" fill="#DEEEFF"/>
+            <path d="M31.6338 10.5435V29.4518C31.6336 30.0304 31.4037 30.5853 30.9946 30.9945C30.5856 31.4038 30.0308 31.6339 29.4522 31.6343H10.5438C9.9652 31.6341 9.41033 31.4042 9.00111 30.9951C8.59188 30.5861 8.36177 30.0313 8.36133 29.4527V10.5435C8.36177 9.965 8.59176 9.41034 9.00081 9.0013C9.40986 8.59225 9.96452 8.36226 10.543 8.36182H29.4522C30.0306 8.36226 30.5853 8.59225 30.9943 9.0013C31.4034 9.41034 31.6334 9.965 31.6338 10.5435Z" fill="#1E90FF"/>
+            <path d="M31.6338 11.616V29.4526C31.6334 30.0311 31.4034 30.5858 30.9943 30.9948C30.5853 31.4039 30.0306 31.6339 29.4522 31.6343H10.5438C9.9652 31.6341 9.41033 31.4042 9.00111 30.9951C8.59188 30.586 8.36177 30.0313 8.36133 29.4526V24.456L12.438 21.8343L18.623 22.9251L24.2705 19.1618L27.5288 13.376L31.6338 11.616Z" fill="#1E90FF"/>
+            <path d="M31.6347 14.5433V13.8158H29.0897V12.3608H28.3622V13.8158H26.5438V14.5433H28.3622V16.725H26.1805V15.6333H25.453V16.725H25.0897V17.4525H25.453V19.6342H22.5447V22.5425H20.3622V21.8158H19.6347V22.5433H17.453V22.1792H16.7255V22.5433H14.5438V21.8158H13.8172V22.5433H11.6338V22.1792H10.9072V22.5433H10.0997V23.27H10.9072V25.4525H8.36133V26.1792H10.9072V28.3608H8.36133V29.0883H10.9072V31.6333H11.6338V29.0883H13.8163V31.6342H14.543V29.0883H16.7247V31.6333H17.4522V29.0883H19.6338V31.6342H20.3613V29.0883H22.543V31.6342H23.2705V29.0883H25.4522V31.6342H26.1797V29.0883H28.3613V31.6342H29.0888V29.0883H31.6338V28.3608H29.0888V26.1792H31.6338V25.4525H29.0888V23.27H31.6338V22.5433H29.0888V20.3608H31.6338V19.6342H29.0888V17.4525H31.6338V16.725H29.0888V14.5433H31.6347ZM23.2713 20.3608H25.453V22.5433H23.2713V20.3608ZM25.453 23.27V25.4517H23.2713V23.27H25.453ZM22.5447 23.27V25.4517H20.3622V23.27H22.5447ZM19.6347 23.27V25.4517H17.453V23.27H19.6347ZM16.7263 23.27V25.4517H14.5438V23.27H16.7263ZM11.6347 23.27H13.8172V25.4517H11.6338L11.6347 23.27ZM11.6347 28.3617V26.1792H13.8172V28.3608L11.6347 28.3617ZM14.5438 28.3617V26.1792H16.7255V28.3608L14.5438 28.3617ZM17.453 28.3617V26.1792H19.6347V28.3608L17.453 28.3617ZM20.3622 28.3617V26.1792H22.5438V28.3608L20.3622 28.3617ZM23.2713 28.3617V26.1792H25.453V28.3608L23.2713 28.3617ZM28.363 28.3617H26.1797V26.1792H28.363V28.3617ZM28.363 25.4525H26.1797V23.27H28.363V25.4525ZM28.363 22.5433H26.1797V20.3608H28.363V22.5433ZM28.363 19.6342H26.1797V17.4525H28.363V19.6342Z" fill="white"/>
+            <path d="M31.6347 10.8225L27.7597 12.4808C26.7872 11.99 25.783 13.0733 26.3363 14.0058L24.1838 17.8333C24.0049 17.8011 23.8208 17.8144 23.6483 17.872C23.4759 17.9296 23.3208 18.0296 23.1972 18.1629C23.0736 18.2962 22.9855 18.4585 22.9411 18.6348C22.8967 18.8111 22.8973 18.9957 22.943 19.1717L19.1947 21.6717C19.0072 21.5292 18.7784 21.4517 18.543 21.4508C18.1363 21.4508 17.7847 21.6767 17.598 22.0075L13.4338 21.2725C13.1872 19.7833 10.9638 20.2633 11.3022 21.7008L8.36133 23.5892V24.455L11.6963 22.31C11.819 22.4066 11.9613 22.4754 12.1132 22.5117C12.2651 22.5479 12.4231 22.5507 12.5762 22.5199C12.7293 22.489 12.8739 22.4253 13 22.3331C13.126 22.2409 13.2306 22.1224 13.3063 21.9858L17.4705 22.7208C17.4915 22.8682 17.5426 23.0097 17.6205 23.1366C17.6984 23.2634 17.8015 23.373 17.9234 23.4584C18.0453 23.5438 18.1835 23.6033 18.3293 23.6332C18.4752 23.6631 18.6256 23.6628 18.7713 23.6322C18.917 23.6016 19.0549 23.5415 19.1764 23.4555C19.2979 23.3696 19.4006 23.2596 19.4779 23.1324C19.5552 23.0052 19.6056 22.8634 19.626 22.716C19.6464 22.5685 19.6363 22.4184 19.5963 22.275L23.3463 19.7758C24.383 20.5542 25.6713 19.1717 24.8155 18.1917L26.9072 14.475C27.803 14.7917 28.6222 13.91 28.2822 13.0517L31.6338 11.615L31.6347 10.8225Z" fill="white"/>
+            <path d="M21.4531 17.4517L18.5439 19.6342L15.6348 17.4517V10.9067H21.4531V17.4517Z" fill="white"/>
+            <path d="M18.555 12.4167C18.715 12.4167 18.8425 12.5442 18.8425 12.7042V12.7809C19.1392 12.8254 19.4058 12.9137 19.6425 13.0459C19.7023 13.078 19.7522 13.1258 19.787 13.184C19.8218 13.2423 19.8401 13.3089 19.84 13.3767C19.8404 13.4258 19.8309 13.4745 19.8121 13.5198C19.7933 13.5651 19.7656 13.6062 19.7306 13.6406C19.6956 13.6751 19.6541 13.7021 19.6085 13.7202C19.5629 13.7383 19.5141 13.747 19.465 13.7459C19.3978 13.745 19.3317 13.7279 19.2725 13.6959C19.1277 13.6157 18.9738 13.553 18.8142 13.5092V14.3476C19.6533 14.5734 20.0117 14.9151 20.0117 15.5334C20.0117 16.1501 19.5375 16.5484 18.8425 16.6251V16.9167C18.8431 16.9546 18.836 16.9922 18.8219 17.0272C18.8077 17.0623 18.7866 17.0942 18.7599 17.121C18.7331 17.1478 18.7013 17.169 18.6663 17.1833C18.6312 17.1976 18.5937 17.2047 18.5558 17.2042C18.518 17.2048 18.4804 17.1978 18.4454 17.1836C18.4103 17.1694 18.3784 17.1483 18.3516 17.1216C18.3248 17.0949 18.3036 17.063 18.2893 17.028C18.275 16.993 18.2679 16.9554 18.2683 16.9176V16.6192C17.8832 16.5688 17.5132 16.4373 17.1825 16.2334C17.1245 16.2001 17.0764 16.1518 17.0432 16.0937C17.0101 16.0355 16.9932 15.9695 16.9942 15.9026C16.9942 15.6876 17.1608 15.5276 17.375 15.5276C17.4519 15.5311 17.5263 15.556 17.59 15.5992C17.8217 15.7484 18.0425 15.8526 18.2958 15.9076V15.0309C17.5017 14.8159 17.11 14.5126 17.11 13.8559C17.11 13.2501 17.5733 12.8417 18.2683 12.7701V12.7034C18.2683 12.5442 18.3958 12.4167 18.555 12.4167ZM18.2967 14.2042V13.4592C18.0317 13.4976 17.9158 13.6301 17.9158 13.8067C17.9158 13.9776 17.9925 14.0934 18.2958 14.2042M18.8133 15.1692V15.9359C19.0739 15.8959 19.2045 15.7765 19.205 15.5776C19.205 15.3951 19.1117 15.2742 18.8133 15.1692Z" fill="#1E90FF"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_651_1127">
+              <rect width="40" height="40" fill="white"/>
+            </clipPath>
+          </defs>
         </svg>
         <h2 class="font-display text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900">
           Heromate Plan Comparison
@@ -642,7 +563,7 @@
       </div>
   
       <!-- Comparison Table Container -->
-      <div class="relative rounded-2xl border border-blue-200 bg-white shadow-lg overflow-hidden">
+      <div class="relative rounded border border-blue-200 bg-white shadow-lg overflow-hidden">
         <!-- Product Image (Right side) -->
         <div class="absolute top-0 right-0 w-48 h-full hidden lg:flex items-center justify-center pointer-events-none">
           <img src="/placeholder.svg?height=400&width=300" 
