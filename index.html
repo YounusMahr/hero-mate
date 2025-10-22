@@ -58,14 +58,7 @@
         <nav class="c-header__nav" aria-label="Primary">
           <ul class="c-header__list">
             <li><a class="pill pill--active" href="./index.html">Home</a></li>
-            <li>
-              <button class="link-with-caret" type="button" aria-haspopup="true" aria-expanded="false">
-                Services
-                <svg class="caret" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true">
-                  <path fill="currentColor" d="M5.5 7.5l4.5 4 4.5-4" />
-                </svg>
-              </button>
-            </li>
+            <li><a class="pill " href="./index.html">Services</a></li>
             <li><a class="link" href="./pages/pricing.html">Price Estimator</a></li>
             <li><a class="link" href="./pages/jobs.html">Jobs</a></li>
           </ul>
@@ -73,8 +66,8 @@
     
         <!-- Action buttons -->
         <div class="c-header__actions">
-          <a class="link" href="./pages/login.html">Login</a>
-          <a class="btn btn--cta" href="./pages/signup.html">Become a Hero</a>
+          <button id="loginTrigger" class="link" type="button">Login</button>
+          <button id="signupTrigger" class="btn btn--cta" type="button">Become a Hero</button>
         </div>
       </div>
     
@@ -82,17 +75,12 @@
       <div class="c-header__drawer" id="mobile-menu" hidden>
         <nav class="c-header__drawer-nav" aria-label="Mobile">
           <a class="pill pill--active" href="./index.html">Home</a>
-          <button class="link-with-caret" type="button" aria-haspopup="true" aria-expanded="false">
-            Services
-            <svg class="caret" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true">
-              <path fill="currentColor" d="M5.5 7.5l4.5 4 4.5-4" />
-            </svg>
-          </button>
+          <a class="pill " href="./index.html">Services</a>
           <a class="link" href="./pages/pricing.html">Price Estimator</a>
           <a class="link" href="./pages/jobs.html">Jobs</a>
           <hr class="divider" />
-          <a class="link" href="./pages/login.html">Login</a>
-          <a class="btn btn--cta" href="./pages/signup.html">Become a Hero</a>
+          <button id="loginTriggerMobile" class="link" type="button">Login</button>
+          <button id="signupTriggerMobile" class="btn btn--cta" type="button">Become a Hero</button>
         </nav>
       </div>
     </header>
@@ -637,17 +625,8 @@
       <section id="philosophy" class="bg-[#D7F1FF] py-4 md:py-4 relative overflow-hidden" aria-label="Philosophy and Aussie Mate Identity">
         <!-- Decorative background stars (left side) -->
         <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-          <svg class="absolute top-12 left-8 text-[color:var(--color-blue)] opacity-60" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/>
-          </svg>
-          <svg class="absolute top-32 left-16 text-[color:var(--color-blue)] opacity-40" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/>
-          </svg>
-          <svg class="absolute top-48 left-32 text-[color:var(--color-blue)] opacity-50" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/>
-          </svg>
-          <svg class="absolute top-20 left-1/3 text-[color:var(--color-blue)] opacity-35" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-20 left-10 opacity-50" width="178" height="173" viewBox="0 0 178 173" fill="none">
+            <path d="M88.7933 0.0375977L103.834 59.561L159.749 34.2082L122.59 83.0799L177.274 110.989L115.896 112.407L128.171 172.562L88.7933 125.46L49.4156 172.562L61.6905 112.407L0.312553 110.989L54.9966 83.0799L17.8372 34.2082L73.7523 59.561L88.7933 0.0375977Z" fill="#84D6FF"/>
           </svg>
       
           <!-- Circular/curved SVG on right side -->
@@ -663,12 +642,12 @@
             <!-- Left: Heading, List, Button -->
             <div>
               <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[color:var(--text-primary)] text-balance">
-                Philosophy &amp; <span class="text-[color:var(--color-green)]">Aussie Mate</span> <span class="relative inline-block">
+                Philosophy &amp; <br/><span class="text-[color:#FFCD00]">Aussie <span class="text-[color:#00843D]"> Mate</span></span> <span class="relative">
                   Identity
                   <!-- Green swoosh underline -->
-                  <svg class="absolute -bottom-3 left-0 w-full" xmlns="http://www.w3.org/2000/svg" width="200" height="16" viewBox="0 0 200 16" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M2 8c60 10 136 10 196 0" stroke="var(--color-green)" stroke-width="6" stroke-linecap="round"/>
-                    </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0" width="264" height="17" viewBox="0 0 264 17" fill="none">
+                    <path d="M2.77948 6.49762C10.7512 3.68191 34.6866 0.0365323 66.6545 7.98073C106.614 17.911 121.589 -2.74688 173.414 6.95872C225.238 16.6643 246.992 16.1689 261.134 2.99361" stroke="#E4002B" stroke-width="5" stroke-linecap="round"/>
+                  </svg>
                   </span>
                 </h2>
       
@@ -762,7 +741,7 @@
     <!-- Footer Before    -->
     <section class="heromate-heading-section" aria-label="Heromate brand heading">
       <div class="heromate-heading-wrapper">
-        <h2 class="heromate-heading-text text-[5rem] md:text-[17rem]">heromate</h2>
+        <h2 class="heromate-heading-text text-[5rem] md:text-[15rem]" style="font-family: 'Poppins', sans-serif;">heromate</h2>
       </div>
     </section> 
     
@@ -836,7 +815,7 @@
     
         <!-- Bottom bar -->
         <!-- Adjusted layout and spacing for cleaner footer credit section -->
-        <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center md:items-center justify-between gap-6 text-xs text-white/60">
+        <div class="mt-10 pt-6 border-t border-[#FFFFFF80] flex flex-col md:flex-row items-center md:items-center justify-between gap-6 text-xs text-white/60">
           <p>
             © <span id="year"></span> HEROMATE™ | ABN 21 588 535 560 | All rights reserved.
           </p>
@@ -858,11 +837,376 @@
     
    
 
+    <!-- Login Popup Modal -->
+    <div id="loginModal" class="fixed inset-0 z-50 hidden">
+      <!-- Backdrop with blur -->
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300" id="loginBackdrop"></div>
+      
+      <!-- Modal content -->
+      <div class="relative flex items-center justify-center min-h-screen p-4">
+        <div id="loginModalContent" class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 transform transition-all duration-300 scale-95 opacity-0">
+          <!-- Close button -->
+          <button id="loginClose" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors" aria-label="Close login">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <!-- Logo -->
+          <div class="flex justify-center mb-6">
+            <img src="/public/icons/logo.png" alt="Heromate" class="h-12 w-auto" />
+          </div>
+
+          <!-- Description -->
+          <p class="text-center text-sm leading-relaxed text-gray-600 mb-6">
+            Access your HeroMate workspace with a secure login to manage and grow your business.
+          </p>
+
+          <!-- Login Form -->
+          <form id="popupLoginForm" class="flex flex-col gap-4" novalidate>
+            <!-- Email Field -->
+            <div class="flex flex-col gap-1">
+              <label for="popupEmail" class="text-sm font-semibold text-gray-800">Email</label>
+              <div class="relative flex items-center">
+                <svg class="absolute left-3 w-5 h-5 text-gray-400 pointer-events-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input 
+                  id="popupEmail" 
+                  type="email" 
+                  name="email" 
+                  placeholder="Email" 
+                  class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  required 
+                  aria-describedby="popupEmailError" />
+              </div>
+              <span id="popupEmailError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+            </div>
+
+            <!-- Password Field -->
+            <div class="flex flex-col gap-1">
+              <label for="popupPassword" class="text-sm font-semibold text-gray-800">Password</label>
+              <div class="relative flex items-center">
+                <svg class="absolute left-3 w-5 h-5 text-gray-400 pointer-events-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input 
+                  id="popupPassword" 
+                  type="password" 
+                  name="password" 
+                  placeholder="Password" 
+                  class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  required 
+                  aria-describedby="popupPasswordError" />
+              </div>
+              <span id="popupPasswordError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+            </div>
+
+            <!-- Forgot Password Link -->
+            <a href="./pages/forgot.html" class="text-sm font-medium text-blue-500 hover:opacity-80 transition-opacity self-start">Forgot Password?</a>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+              Log in
+            </button>
+
+            <!-- Sign Up Link -->
+            <p class="text-center text-sm text-gray-600">
+              <a href="./pages/signup.html" class="text-blue-500 font-medium hover:opacity-80 transition-opacity">Sign up for a new account</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Popup Modal -->
+    <div id="signupModal" class="fixed inset-0 z-50 hidden">
+      <!-- Backdrop with blur -->
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300" id="signupBackdrop"></div>
+      
+      <!-- Modal content -->
+      <div class="relative flex items-center justify-center min-h-screen p-4">
+        <div id="signupModalContent" class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 transform transition-all duration-300 scale-95 opacity-0">
+          <!-- Close button -->
+          <button id="signupClose" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors" aria-label="Close signup">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <!-- Logo -->
+          <div class="flex justify-center mb-6">
+            <img src="/public/icons/logo.png" alt="Heromate" class="h-12 w-auto" />
+          </div>
+
+          <!-- Description -->
+          <p class="text-center text-sm leading-relaxed text-gray-600 mb-6">
+            Join HeroMate and start your journey as a verified local hero. Create your account to begin helping your community.
+          </p>
+
+          <!-- Signup Form -->
+          <form id="popupSignupForm" class="flex flex-col gap-4" novalidate>
+            <!-- Name Fields -->
+            <div class="flex gap-3">
+              <!-- First Name -->
+              <div class="flex flex-col gap-1 flex-1">
+                <label for="popupFirstName" class="text-sm font-semibold text-gray-800">First Name</label>
+                <input 
+                  id="popupFirstName" 
+                  type="text" 
+                  name="first_name" 
+                  placeholder="First Name" 
+                  class="w-full pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  required 
+                  aria-describedby="popupFirstNameError" />
+                <span id="popupFirstNameError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+              </div>
+              
+              <!-- Last Name -->
+              <div class="flex flex-col gap-1 flex-1">
+                <label for="popupLastName" class="text-sm font-semibold text-gray-800">Last Name</label>
+                <input 
+                  id="popupLastName" 
+                  type="text" 
+                  name="last_name" 
+                  placeholder="Last Name" 
+                  class="w-full pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  required 
+                  aria-describedby="popupLastNameError" />
+                <span id="popupLastNameError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+              </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="flex flex-col gap-1">
+              <label for="popupSignupEmail" class="text-sm font-semibold text-gray-800">Email</label>
+              <div class="relative flex items-center">
+                <svg class="absolute left-3 w-5 h-5 text-gray-400 pointer-events-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input 
+                  id="popupSignupEmail" 
+                  type="email" 
+                  name="email" 
+                  placeholder="Email" 
+                  class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  required 
+                  aria-describedby="popupSignupEmailError" />
+              </div>
+              <span id="popupSignupEmailError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="flex flex-col gap-1">
+              <label for="popupPhone" class="text-sm font-semibold text-gray-800">Phone Number</label>
+              <div class="relative flex items-center">
+                <svg class="absolute left-3 w-5 h-5 text-gray-400 pointer-events-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input 
+                  id="popupPhone" 
+                  type="tel" 
+                  name="phone" 
+                  placeholder="+61 | Phone Number" 
+                  class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  required 
+                  aria-describedby="popupPhoneError" />
+              </div>
+              <span id="popupPhoneError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+              Become a Hero
+            </button>
+
+            <!-- Privacy Policy Link -->
+            <p class="text-center text-sm text-gray-600">
+              <a href="#!" class="text-blue-500 font-medium hover:opacity-80 transition-opacity">Click for privacy policy</a>
+            </p>
+
+            <!-- Login Link -->
+            <p class="text-center text-sm text-gray-600">
+              <a href="#!" id="signupToLoginLink" class="text-blue-500 font-medium hover:opacity-80 transition-opacity">Already have an account? Log In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- Scripts --> 
     <script type="module" src="./scripts/include.js"></script>
     <script type="module" src="./components/header.js"></script>
     <script type="module" src="./components/hero.js"></script>
     <script type="module" src="./components/why-us.js"></script>
     <script type="module" src="./components/footer.js"></script>
+    
+    <!-- Login Popup Script -->
+    <script>
+      // Login popup functionality
+      const loginModal = document.getElementById('loginModal');
+      const loginModalContent = document.getElementById('loginModalContent');
+      const loginBackdrop = document.getElementById('loginBackdrop');
+      const loginClose = document.getElementById('loginClose');
+      const loginTriggers = document.querySelectorAll('#loginTrigger, #loginTriggerMobile');
+      const popupLoginForm = document.getElementById('popupLoginForm');
+
+      // Show modal function
+      function showLoginModal() {
+        loginModal.classList.remove('hidden');
+        // Trigger animations after a brief delay
+        setTimeout(() => {
+          loginBackdrop.classList.add('opacity-100');
+          loginModalContent.classList.remove('scale-95', 'opacity-0');
+          loginModalContent.classList.add('scale-100', 'opacity-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Hide modal function
+      function hideLoginModal() {
+        loginBackdrop.classList.remove('opacity-100');
+        loginModalContent.classList.remove('scale-100', 'opacity-100');
+        loginModalContent.classList.add('scale-95', 'opacity-0');
+        
+        setTimeout(() => {
+          loginModal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }, 300);
+      }
+
+      // Event listeners
+      loginTriggers.forEach(trigger => {
+        trigger.addEventListener('click', showLoginModal);
+      });
+
+      loginClose.addEventListener('click', hideLoginModal);
+      loginBackdrop.addEventListener('click', hideLoginModal);
+
+      // Form submission
+      popupLoginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Simulate login process
+        const submitBtn = popupLoginForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Logging in...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+          // Success animation
+          submitBtn.textContent = 'Success!';
+          submitBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+          
+          // Hide modal after success
+          setTimeout(() => {
+            hideLoginModal();
+            // Reset form
+            popupLoginForm.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+          }, 1500);
+        }, 2000);
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !loginModal.classList.contains('hidden')) {
+          hideLoginModal();
+        }
+      });
+
+      // Signup popup functionality
+      const signupModal = document.getElementById('signupModal');
+      const signupModalContent = document.getElementById('signupModalContent');
+      const signupBackdrop = document.getElementById('signupBackdrop');
+      const signupClose = document.getElementById('signupClose');
+      const signupTriggers = document.querySelectorAll('#signupTrigger, #signupTriggerMobile');
+      const popupSignupForm = document.getElementById('popupSignupForm');
+      const signupToLoginLink = document.getElementById('signupToLoginLink');
+
+      // Show signup modal function
+      function showSignupModal() {
+        signupModal.classList.remove('hidden');
+        // Trigger animations after a brief delay
+        setTimeout(() => {
+          signupBackdrop.classList.add('opacity-100');
+          signupModalContent.classList.remove('scale-95', 'opacity-0');
+          signupModalContent.classList.add('scale-100', 'opacity-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Hide signup modal function
+      function hideSignupModal() {
+        signupBackdrop.classList.remove('opacity-100');
+        signupModalContent.classList.remove('scale-100', 'opacity-100');
+        signupModalContent.classList.add('scale-95', 'opacity-0');
+        
+        setTimeout(() => {
+          signupModal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }, 300);
+      }
+
+      // Event listeners for signup
+      signupTriggers.forEach(trigger => {
+        trigger.addEventListener('click', showSignupModal);
+      });
+
+      signupClose.addEventListener('click', hideSignupModal);
+      signupBackdrop.addEventListener('click', hideSignupModal);
+
+      // Switch from signup to login
+      signupToLoginLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        hideSignupModal();
+        setTimeout(() => {
+          showLoginModal();
+        }, 300);
+      });
+
+      // Signup form submission
+      popupSignupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Simulate signup process
+        const submitBtn = popupSignupForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Creating Account...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+          // Success animation
+          submitBtn.textContent = 'Welcome Hero!';
+          submitBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+          
+          // Hide modal after success
+          setTimeout(() => {
+            hideSignupModal();
+            // Reset form
+            popupSignupForm.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+          }, 2000);
+        }, 2500);
+      });
+
+      // Close signup on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !signupModal.classList.contains('hidden')) {
+          hideSignupModal();
+        }
+      });
+    </script>
   </body>
 </html>
