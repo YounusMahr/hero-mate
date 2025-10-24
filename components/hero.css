@@ -123,11 +123,11 @@
 }
 .hero-shape {
   position: absolute;
-  opacity: 0.6;
+  /* opacity: 0.6; */
 }
 .hero-shape--lt {
   top: -40px;
-  left: -60px;
+  left: -50px;
   width: 220px;
 }
 .hero-shape--lb {
@@ -149,7 +149,7 @@
 @media (min-width: 992px) {
   .hero-shape--lt {
     top: -50px;
-    left: -80px;
+    left: -70px;
     width: 268px;
   }
   .hero-shape--lb {
@@ -159,7 +159,7 @@
   }
   .hero-shape--rt {
     top: -60px;
-    right: -90px;
+    right: -50px;
     width: 268px;
   }
   .hero-shape--rb {
