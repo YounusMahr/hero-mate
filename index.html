@@ -18,24 +18,106 @@
     <link rel="stylesheet" href="./components/footer.css">
     <!-- Using Tailwind CDN for development - will be replaced with production build later -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: 'var(--color-blue)',
-              cta: 'var(--color-green)',
-              surface: 'var(--bg-surface)',
-              primary: 'var(--text-primary)',
-            },
-            fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-              display: ['"Exo 2"', 'Inter', 'ui-sans-serif'],
-            },
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: 'var(--color-blue)',
+            cta: 'var(--color-green)',
+            surface: 'var(--bg-surface)',
+            primary: 'var(--text-primary)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['"Exo 2"', 'Inter', 'ui-sans-serif'],
           },
         },
+      },
+    }
+  </script>
+  <style>
+    .toggle-container {
+      background: linear-gradient(135deg, rgba(185, 232, 255, 0.1) 0%, rgba(185, 232, 255, 0.05) 100%);
+      border-radius: 1rem;
+    }
+
+    .toggle-wrapper {
+      gap: 0.25rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      font-family: "Inter", sans-serif;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .toggle-btn--left.active {
+      background-color: white;
+      color: var(--color-blue);
+    }
+
+    .toggle-btn--left:not(.active) {
+      background-color: transparent;
+      color: rgba(46, 50, 56, 0.5);
+    }
+
+    .toggle-btn--right.active {
+      background: linear-gradient(135deg, var(--color-blue) 0%, #0066ff 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
+    }
+
+    .toggle-btn--right:not(.active) {
+      background-color: transparent;
+      color: rgba(46, 50, 56, 0.5);
+    }
+
+    /* Hover effects */
+    .toggle-btn:hover:not(.active) {
+      background-color: rgba(30, 144, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    .toggle-btn.active:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(30, 144, 255, 0.4);
+    }
+
+    /* Focus states for accessibility */
+    .toggle-btn:focus-visible {
+      outline: 2px solid var(--color-blue);
+      outline-offset: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .toggle-btn {
+        padding: 0.5rem 1rem;
       }
-    </script>
+
+      .toggle-btn span:first-child {
+        font-size: 1rem;
+      }
+
+      .toggle-btn span:last-child {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* Hide scrollbar but keep scroll functionality */
+    #signupModalContent::-webkit-scrollbar {
+      display: none;
+    }
+
+    #signupModalContent {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
   </head>
   <body>
 
@@ -940,7 +1022,7 @@
       
       <!-- Modal content -->
       <div class="relative flex items-center justify-center min-h-screen p-4">
-        <div id="signupModalContent" class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 transform transition-all duration-300 scale-95 opacity-0">
+        <div id="signupModalContent" class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 transform transition-all duration-300 scale-95 opacity-0 max-h-[90vh] overflow-y-auto">
           <!-- Close button -->
           <button id="signupClose" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors" aria-label="Close signup">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -957,6 +1039,31 @@
           <p class="text-center text-sm leading-relaxed text-gray-600 mb-6">
             Join HeroMate and start your journey as a verified local hero. Create your account to begin helping your community.
           </p>
+
+          <!-- Toggle Container -->
+          <div class="toggle-container flex items-center justify-center py-2 mb-4">
+            <div class="toggle-wrapper inline-flex rounded-full border-2 border-[color:var(--color-blue)] bg-[color:var(--color-blue)] p-1 shadow-sm">
+              <!-- Left Toggle: Hero Tradie -->
+              <button 
+                class="toggle-btn toggle-btn--left active flex flex-col items-center justify-center px-6 md:px-8 py-1 rounded-full transition-all duration-300 ease-in-out"
+                data-toggle="hero"
+                aria-pressed="true"
+                aria-label="Switch to Hero Tradie">
+                <span class="text-lg md:text-2xl font-bold text-[color:var(--color-blue)]">Hero</span>
+                <span class="text-xs md:text-sm font-medium text-gray-800">Tradie</span>
+              </button>
+          
+              <!-- Right Toggle: Mate Customer -->
+              <button 
+                class="toggle-btn toggle-btn--right flex flex-col items-center justify-center px-6 md:px-8 py-1 rounded-full transition-all duration-300 ease-in-out"
+                data-toggle="mate"
+                aria-pressed="false"
+                aria-label="Switch to Mate Customer">
+                <span class="text-lg md:text-2xl font-bold text-white">Mate</span>
+                <span class="text-xs md:text-sm font-medium text-white">Customer</span>
+              </button>
+            </div>
+          </div>
 
           <!-- Signup Form -->
           <form id="popupSignupForm" class="flex flex-col gap-4" novalidate>
@@ -1184,6 +1291,37 @@
         }, 300);
       });
 
+      // Toggle functionality for signup popup
+      const popupToggleButtons = document.querySelectorAll('#signupModal .toggle-btn');
+      let popupCurrentToggle = 'hero';
+
+      popupToggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const toggleType = this.getAttribute('data-toggle');
+          
+          // Remove active class from all buttons
+          popupToggleButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+          });
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          this.setAttribute('aria-pressed', 'true');
+          
+          // Update current toggle
+          popupCurrentToggle = toggleType;
+          
+          // Update button text based on selection
+          const submitBtn = popupSignupForm.querySelector('button[type="submit"]');
+          if (toggleType === 'hero') {
+            submitBtn.textContent = 'Become a Hero';
+          } else {
+            submitBtn.textContent = 'Join as Customer';
+          }
+        });
+      });
+
       // Signup form submission
       popupSignupForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -1198,7 +1336,7 @@
         // Simulate API call
         setTimeout(() => {
           // Success animation
-          submitBtn.textContent = 'Welcome Hero!';
+          submitBtn.textContent = popupCurrentToggle === 'hero' ? 'Welcome Hero!' : 'Welcome Customer!';
           submitBtn.classList.add('bg-green-500', 'hover:bg-green-600');
           
           // Hide modal after success
@@ -1206,7 +1344,7 @@
             hideSignupModal();
             // Reset form
             popupSignupForm.reset();
-            submitBtn.textContent = originalText;
+            submitBtn.textContent = popupCurrentToggle === 'hero' ? 'Become a Hero' : 'Join as Customer';
             submitBtn.disabled = false;
             submitBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
           }, 2000);

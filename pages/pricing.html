@@ -38,6 +38,88 @@
         },
       }
     </script>
+    <style>
+      .toggle-container {
+        background: linear-gradient(135deg, rgba(185, 232, 255, 0.1) 0%, rgba(185, 232, 255, 0.05) 100%);
+        border-radius: 1rem;
+      }
+
+      .toggle-wrapper {
+        gap: 0.25rem;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .toggle-btn {
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        white-space: nowrap;
+      }
+
+      .toggle-btn--left.active {
+        background-color: white;
+        color: var(--color-blue);
+      }
+
+      .toggle-btn--left:not(.active) {
+        background-color: transparent;
+        color: rgba(46, 50, 56, 0.5);
+      }
+
+      .toggle-btn--right.active {
+        background: linear-gradient(135deg, var(--color-blue) 0%, #0066ff 100%);
+        color: white;
+        box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
+      }
+
+      .toggle-btn--right:not(.active) {
+        background-color: transparent;
+        color: rgba(46, 50, 56, 0.5);
+      }
+
+      /* Hover effects */
+      .toggle-btn:hover:not(.active) {
+        background-color: rgba(30, 144, 255, 0.05);
+        transform: translateY(-1px);
+      }
+
+      .toggle-btn.active:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(30, 144, 255, 0.4);
+      }
+
+      /* Focus states for accessibility */
+      .toggle-btn:focus-visible {
+        outline: 2px solid var(--color-blue);
+        outline-offset: 2px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 640px) {
+        .toggle-btn {
+          padding: 0.5rem 1rem;
+        }
+
+        .toggle-btn span:first-child {
+          font-size: 1rem;
+        }
+
+        .toggle-btn span:last-child {
+          font-size: 0.7rem;
+        }
+      }
+
+      /* Hide scrollbar but keep scroll functionality */
+      #signupModalContent::-webkit-scrollbar {
+        display: none;
+      }
+
+      #signupModalContent {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+    </style>
   </head>
   <body>
 
@@ -91,33 +173,20 @@
 <main id="main" >
   <section id="pricing" class="bg-[#F5F7FA]  md:py-16 lg:py-20 relative overflow-hidden" aria-label="Pricing Plans">
     <!-- Enhanced decorative SVG background elements with more pen strokes -->
-    <!-- Left side pen strokes -->
-    <div class="absolute top-10 left-0 w-24 h-32 opacity-30" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" fill="none">
-        <path d="M20 10 Q 30 40, 25 80 Q 20 120, 30 150" stroke="var(--color-blue)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M40 20 Q 45 50, 40 90 Q 35 130, 45 150" stroke="var(--color-blue)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-        <path d="M10 30 Q 15 60, 10 100" stroke="var(--color-blue)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-      </svg>
-    </div>
-  
     <!-- Right side pen strokes -->
-    <div class="absolute top-20 right-0 w-24 h-40 opacity-25" aria-hidden="true">
+    <!-- <div class="absolute top-20 right-0 w-24 h-40 opacity-25" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" fill="none">
         <path d="M80 20 Q 70 50, 75 100 Q 80 140, 70 150" stroke="var(--color-blue)" stroke-width="3" stroke-linecap="round"/>
         <path d="M60 10 Q 55 45, 60 95 Q 65 135, 55 150" stroke="var(--color-blue)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
         <path d="M90 40 Q 85 70, 90 120" stroke="var(--color-blue)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
       </svg>
-    </div>
+    </div> -->
   
     <!-- Bottom right circular elements -->
-    <div class="absolute bottom-0 right-0 w-40 h-40 opacity-15" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="40" stroke="var(--color-blue)" stroke-width="2"/>
-        <circle cx="50" cy="50" r="30" stroke="var(--color-blue)" stroke-width="1.5" opacity="0.6"/>
-        <circle cx="50" cy="50" r="20" stroke="var(--color-blue)" stroke-width="1" opacity="0.4"/>
-      </svg>
+    <div class="absolute bottom-32 right-0 w-40 h-40 " aria-hidden="true">
+     <img src="/public/img/pring-2.png" alt="">
     </div>
-
+     
       <!-- Centered heading and description -->
       <div class="flex flex-col lg:flex-row items-center justify-end  gap-6 lg:gap-12 mb-8 md:mb-12">
     <div class="text-center px-4 ">
@@ -145,12 +214,19 @@
       </div>
 
     </div>
+
+    <!-- Left side pen strokes -->
+    <div class="absolute top-60  w-24 h-32 " aria-hidden="true">
+      <img src="/public/img/pring-1.png" alt="">
+      </div>
+
+    
   
     <div class="mx-auto max-w-[var(--container-max)] px-4 md:px-6 relative z-10">
       <!-- Centered header with image positioned to the right -->
       <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-12 md:mb-16">
 
-  
+    
   
       <!-- Pricing Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -451,7 +527,10 @@
 
  <!-- --- process section ---- -->
 
- <div class="process-container md:px-14 px-6 bg-[#F5F7FA]">
+ <div class=" relative process-container md:px-14 px-6 bg-[#F5F7FA]">
+  <div class="absolute bottom-32 left-0 w-40 h-40 " aria-hidden="true">
+    <img src="/public/img/mug.png" alt="">
+   </div>
   <div class="grid-layout">
       <!-- Connecting Lines -->
       <div class="connecting-line line-h1"></div>
@@ -519,13 +598,8 @@
         <path d="M40,120 Q100,70 160,120 T260,120" stroke="currentColor" stroke-width="2" fill="none"/>
         <path d="M30,140 Q100,90 170,140 T270,140" stroke="currentColor" stroke-width="2" fill="none"/>
       </svg>
-      
       <!-- Right curved waves -->
-      <svg class="absolute right-0 bottom-1/4 w-80 h-80 text-blue-100 opacity-30" viewBox="0 0 200 200" fill="none">
-        <path d="M50,100 Q100,50 150,100 T250,100" stroke="currentColor" stroke-width="2" fill="none"/>
-        <path d="M40,120 Q100,70 160,120 T260,120" stroke="currentColor" stroke-width="2" fill="none"/>
-        <path d="M30,140 Q100,90 170,140 T270,140" stroke="currentColor" stroke-width="2" fill="none"/>
-      </svg>
+      <img src="/public/img/bottle.png" class="absolute top-1/4 right-0" alt="">
     </div>
   
     <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
@@ -551,15 +625,12 @@
           Heromate Plan Comparison
         </h2>
       </div>
+
   
       <!-- Comparison Table Container -->
       <div class="relative rounded border border-blue-200 bg-white shadow-lg overflow-hidden">
         <!-- Product Image (Right side) -->
-        <div class="absolute top-0 right-0 w-48 h-full hidden lg:flex items-center justify-center pointer-events-none">
-          <img src="/placeholder.svg?height=400&width=300" 
-               alt="Heromate water bottle product" 
-               class="h-full w-auto object-cover opacity-80" />
-        </div>
+      
   
         <!-- Table Wrapper -->
         <div class="overflow-x-auto">
@@ -607,22 +678,22 @@
                   Unlimited Job Access
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
@@ -635,22 +706,22 @@
                   Verified Hero Badge
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
@@ -663,22 +734,22 @@
                   Top Hero Badge
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
@@ -691,22 +762,22 @@
                   Dedicated Support
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
@@ -729,22 +800,22 @@
                   Featured in Marketing
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
@@ -757,22 +828,22 @@
                   Direct Bookings from Customers
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
@@ -785,22 +856,22 @@
                   Analytics Dashboard
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
@@ -813,22 +884,22 @@
                   SMS Job Alerts
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-100">
-                    <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
                 </td>
                 <td class="px-4 md:px-6 py-4 text-center">
-                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
-                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100">
+                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
                   </span>
@@ -1084,7 +1155,7 @@
       
       <!-- Modal content -->
       <div class="relative flex items-center justify-center min-h-screen p-4">
-        <div id="signupModalContent" class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 transform transition-all duration-300 scale-95 opacity-0">
+        <div id="signupModalContent" class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 transform transition-all duration-300 scale-95 opacity-0 max-h-[90vh] overflow-y-auto">
           <!-- Close button -->
           <button id="signupClose" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors" aria-label="Close signup">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1101,6 +1172,31 @@
           <p class="text-center text-sm leading-relaxed text-gray-600 mb-6">
             Join HeroMate and start your journey as a verified local hero. Create your account to begin helping your community.
           </p>
+
+          <!-- Toggle Container -->
+          <div class="toggle-container flex items-center justify-center py-2 mb-4">
+            <div class="toggle-wrapper inline-flex rounded-full border-2 border-[color:var(--color-blue)] bg-[color:var(--color-blue)] p-1 shadow-sm">
+              <!-- Left Toggle: Hero Tradie -->
+              <button 
+                class="toggle-btn toggle-btn--left active flex flex-col items-center justify-center px-6 md:px-8 py-1 rounded-full transition-all duration-300 ease-in-out"
+                data-toggle="hero"
+                aria-pressed="true"
+                aria-label="Switch to Hero Tradie">
+                <span class="text-lg md:text-2xl font-bold text-[color:var(--color-blue)]">Hero</span>
+                <span class="text-xs md:text-sm font-medium text-gray-800">Tradie</span>
+              </button>
+          
+              <!-- Right Toggle: Mate Customer -->
+              <button 
+                class="toggle-btn toggle-btn--right flex flex-col items-center justify-center px-6 md:px-8 py-1 rounded-full transition-all duration-300 ease-in-out"
+                data-toggle="mate"
+                aria-pressed="false"
+                aria-label="Switch to Mate Customer">
+                <span class="text-lg md:text-2xl font-bold text-white">Mate</span>
+                <span class="text-xs md:text-sm font-medium text-white">Customer</span>
+              </button>
+            </div>
+          </div>
 
           <!-- Signup Form -->
           <form id="popupSignupForm" class="flex flex-col gap-4" novalidate>
@@ -1339,6 +1435,37 @@
     }, 300);
   });
 
+  // Toggle functionality for signup popup
+  const popupToggleButtons = document.querySelectorAll('#signupModal .toggle-btn');
+  let popupCurrentToggle = 'hero';
+
+  popupToggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const toggleType = this.getAttribute('data-toggle');
+      
+      // Remove active class from all buttons
+      popupToggleButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      
+      // Add active class to clicked button
+      this.classList.add('active');
+      this.setAttribute('aria-pressed', 'true');
+      
+      // Update current toggle
+      popupCurrentToggle = toggleType;
+      
+      // Update button text based on selection
+      const submitBtn = popupSignupForm.querySelector('button[type="submit"]');
+      if (toggleType === 'hero') {
+        submitBtn.textContent = 'Become a Hero';
+      } else {
+        submitBtn.textContent = 'Join as Customer';
+      }
+    });
+  });
+
   // Signup form submission
   popupSignupForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -1353,7 +1480,7 @@
     // Simulate API call
     setTimeout(() => {
       // Success animation
-      submitBtn.textContent = 'Welcome Hero!';
+      submitBtn.textContent = popupCurrentToggle === 'hero' ? 'Welcome Hero!' : 'Welcome Customer!';
       submitBtn.classList.add('bg-green-500', 'hover:bg-green-600');
       
       // Hide modal after success
@@ -1361,7 +1488,7 @@
         hideSignupModal();
         // Reset form
         popupSignupForm.reset();
-        submitBtn.textContent = originalText;
+        submitBtn.textContent = popupCurrentToggle === 'hero' ? 'Become a Hero' : 'Join as Customer';
         submitBtn.disabled = false;
         submitBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
       }, 2000);

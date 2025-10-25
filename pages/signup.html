@@ -35,6 +35,79 @@
       },
     }
   </script>
+  <style>
+    .toggle-container {
+  background: linear-gradient(135deg, rgba(185, 232, 255, 0.1) 0%, rgba(185, 232, 255, 0.05) 100%);
+  border-radius: 1rem;
+}
+
+.toggle-wrapper {
+  gap: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  white-space: nowrap;
+}
+
+.toggle-btn--left.active {
+  background-color: white;
+  color: var(--color-blue);
+}
+
+.toggle-btn--left:not(.active) {
+  background-color: transparent;
+  color: rgba(46, 50, 56, 0.5);
+}
+
+.toggle-btn--right.active {
+  background: linear-gradient(135deg, var(--color-blue) 0%, #0066ff 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
+}
+
+.toggle-btn--right:not(.active) {
+  background-color: transparent;
+  color: rgba(46, 50, 56, 0.5);
+}
+
+/* Hover effects */
+.toggle-btn:hover:not(.active) {
+  background-color: rgba(30, 144, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.toggle-btn.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 144, 255, 0.4);
+}
+
+/* Focus states for accessibility */
+.toggle-btn:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .toggle-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .toggle-btn span:first-child {
+    font-size: 1rem;
+  }
+
+  .toggle-btn span:last-child {
+    font-size: 0.7rem;
+  }
+}
+
+  </style>
 </head>
 <body class=" min-h-screen flex items-center justify-center">
   <main id="main" class="login-page relative w-full h-screen flex items-center justify-center overflow-hidden">
@@ -54,13 +127,37 @@
           <img src="/public/icons/logo.png" 
                alt="Heromate" 
                class="h-12 w-auto" />
-          <h1 class="sr-only">Heromate Login</h1>
+          <h1 class="sr-only">Heromate Signup</h1>
         </div>
 
         <!-- Description -->
         <p class="text-center text-sm leading-relaxed text-gray-600 mb-2">
           Access your HeroMate workspace with a secure login to manage and grow your business.
         </p>
+
+        <div class="toggle-container flex items-center justify-center py-2">
+          <div class="toggle-wrapper inline-flex rounded-full border-2 border-[color:var(--color-blue)] bg-[color:var(--color-blue)] p-1 shadow-sm">
+            <!-- Left Toggle: Hero Tradie -->
+            <button 
+              class="toggle-btn toggle-btn--left active flex flex-col items-center justify-center px-6 md:px-8 py-1 rounded-full transition-all duration-300 ease-in-out"
+              data-toggle="hero"
+              aria-pressed="true"
+              aria-label="Switch to Hero Tradie">
+              <span class="text-lg md:text-2xl font-bold text-[color:var(--color-blue)]">Hero</span>
+              <span class="text-xs md:text-sm font-medium text-gray-800">Tradie</span>
+            </button>
+        
+            <!-- Right Toggle: Mate Customer -->
+            <button 
+              class="toggle-btn toggle-btn--right flex flex-col items-center justify-center px-6 md:px-8 py-1   rounded-full transition-all duration-300 ease-in-out"
+              data-toggle="mate"
+              aria-pressed="false"
+              aria-label="Switch to Mate Customer">
+              <span class="text-lg md:text-2xl font-bold text-white">Mate</span>
+              <span class="text-xs md:text-sm font-medium text-white">Customer</span>
+            </button>
+          </div>
+        </div>
 
         <!-- Login Form -->
         <form id="loginForm" class="flex flex-col gap-2" novalidate>
