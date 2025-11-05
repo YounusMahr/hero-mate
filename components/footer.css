@@ -25,17 +25,8 @@
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .heromate-heading-section {
-    padding: 1rem 1rem;
-  }
-}
 
-@media (min-width: 1024px) {
-  .heromate-heading-section {
-    padding: 0.5;
-  }
-}
+
 
 .heromate-heading-wrapper {
   width: 100%;
