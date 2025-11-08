@@ -127,7 +127,7 @@
     <header class="c-header" role="banner">
       <div class="c-header__inner container">
         <!-- Logo -->
-        <a href="#" class="c-header__brand" aria-label="Heromate home">
+        <a href="/" class="c-header__brand" aria-label="Heromate home">
           <img src="/public/icons/logo.png" alt="Heromate" class="w-full h-10">
         </a>
     
@@ -142,16 +142,16 @@
         <nav class="c-header__nav" aria-label="Primary">
           <ul class="c-header__list">
             <li><a class="pill pill--active" href="/index.html">Home</a></li>
-            <li><a class="link " href="/index.html">Services</a></li>
-            <li><a class="link" href="/pages/pricing.html">Price Estimator</a></li>
-            <li><a class="link" href="/pages/jobs.html">Jobs</a></li>
+            <li><a class="link " href="#">Services</a></li>
+            <li><a class="link" href="#">Price Estimator</a></li>
+            <li><a class="link" href="#">Jobs</a></li>
           </ul>
         </nav>
     
         <!-- Action buttons -->
         <div class="c-header__actions">
           <button id="loginTrigger" class="link" type="button">Login</button>
-          <button id="signupTrigger" class="btn btn--cta" type="button">Become a Hero</button>
+          <a href="/pages/pricing.html" class="btn btn--cta">Become a Hero</a>
         </div>
       </div>
     
@@ -159,12 +159,12 @@
       <div class="c-header__drawer" id="mobile-menu" hidden>
         <nav class="c-header__drawer-nav" aria-label="Mobile">
           <a class="pill pill--active" href="./index.html">Home</a>
-          <a class="link " href="./index.html">Services</a>
-          <a class="link" href="./pages/pricing.html">Price Estimator</a>
-          <a class="link" href="./pages/jobs.html">Jobs</a>
+          <a class="link " href="#">Services</a>
+          <a class="link" href="#">Price Estimator</a>
+          <a class="link" href="#">Jobs</a>
           <hr class="divider" />
           <button id="loginTriggerMobile" class="link" type="button">Login</button>
-          <button id="signupTriggerMobile" class="btn btn--cta" type="button">Become a Hero</button>
+          <a href="/pages/pricing.html" class="btn btn--cta">Become a Hero</a>
         </nav>
       </div>
     </header>
@@ -174,13 +174,6 @@
   <section id="pricing" class="bg-[#F5F7FA]  md:py-16 lg:py-20 relative overflow-hidden" aria-label="Pricing Plans">
     <!-- Enhanced decorative SVG background elements with more pen strokes -->
     <!-- Right side pen strokes -->
-    <!-- <div class="absolute top-20 right-0 w-24 h-40 opacity-25" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" fill="none">
-        <path d="M80 20 Q 70 50, 75 100 Q 80 140, 70 150" stroke="var(--color-blue)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M60 10 Q 55 45, 60 95 Q 65 135, 55 150" stroke="var(--color-blue)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-        <path d="M90 40 Q 85 70, 90 120" stroke="var(--color-blue)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-      </svg>
-    </div> -->
   
     <!-- Bottom right circular elements -->
     <div class="absolute bottom-32 right-0 w-40 h-40 " aria-hidden="true">
@@ -359,7 +352,7 @@
 
               <!-- Description -->
               <p class="text-sm md:text-base pb-6  border-b border-[color:#1E90FF;]  text-[color:var(--text-primary)] mb-3">
-                Full-time or semi-active heroes ready to scale their customer base.
+                Full-time or semi-active heroes ready to scale their customer base performance.
               </p>
   
           <!-- Price -->
@@ -450,7 +443,7 @@
          
           <!-- Description -->
           <p class="text-sm md:text-base pb-6  border-b border-[color:#1E90FF;]  text-[color:var(--text-primary)] mb-3">
-            High-performing service providers wanting maximum exposure and customer acquisition
+            High-performing service providers wanting maximum visibility and support
           </p>
           <!-- Price -->
           <div class="mb-6">
@@ -1432,10 +1425,10 @@
     }, 300);
   }
 
-  // Event listeners for signup
-  signupTriggers.forEach(trigger => {
-    trigger.addEventListener('click', showSignupModal);
-  });
+  // Event listeners for signup (buttons now navigate to signup.html, so modal is not triggered from header)
+  // signupTriggers.forEach(trigger => {
+  //   trigger.addEventListener('click', showSignupModal);
+  // });
 
   signupClose.addEventListener('click', hideSignupModal);
   signupBackdrop.addEventListener('click', hideSignupModal);

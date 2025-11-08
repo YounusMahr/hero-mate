@@ -121,7 +121,7 @@
     <!-- Login card container with 60% height, centered, using Tailwind -->
     <div class="relative z-10 w-full max-w-md  px-4 flex items-center justify-center">
       <!-- Login card with Tailwind styling -->
-      <div class="w-full bg-white rounded-3xl shadow-2xl p-8 sm:p-10 flex flex-col justify-center h-full max-h-[600px]">
+      <div class="w-full bg-white rounded-3xl shadow-2xl p-4 md:p-6 flex flex-col justify-center h-full">
         <!-- Logo -->
         <div class="flex justify-center mb-2">
           <img src="/public/icons/logo.png" 
@@ -135,26 +135,26 @@
           Access your HeroMate workspace with a secure login to manage and grow your business.
         </p>
 
-        <div class="toggle-container flex items-center justify-center py-2">
-          <div class="toggle-wrapper inline-flex rounded-full border-2 border-[color:var(--color-blue)] bg-[color:var(--color-blue)] p-1 shadow-sm">
+        <div class="toggle-container flex items-center justify-center md:py-2">
+          <div class="toggle-wrapper inline-flex rounded-full  bg-[color:var(--color-blue)] p-1 shadow-sm">
             <!-- Left Toggle: Hero Tradie -->
             <button 
-              class="toggle-btn toggle-btn--left active flex flex-col items-center justify-center px-6 md:px-8 py-1 rounded-full transition-all duration-300 ease-in-out"
+              class="toggle-btn toggle-btn--left active flex flex-col items-center justify-center px-6 md:px-8  rounded-full transition-all duration-300 ease-in-out"
               data-toggle="hero"
               aria-pressed="true"
               aria-label="Switch to Hero Tradie">
-              <span class="text-lg md:text-2xl font-bold text-[color:var(--color-blue)]">Hero</span>
-              <span class="text-xs md:text-sm font-medium text-gray-800">Tradie</span>
+              <span class="text-lg md:text-2xl text-[color:var(--color-blue)]">Hero</span>
+              <span class="text-xs md:text-sm  text-gray-800">Tradie</span>
             </button>
         
             <!-- Right Toggle: Mate Customer -->
             <button 
-              class="toggle-btn toggle-btn--right flex flex-col items-center justify-center px-6 md:px-8 py-1   rounded-full transition-all duration-300 ease-in-out"
+              class="toggle-btn toggle-btn--right flex flex-col items-center justify-center px-6 md:px-8    rounded-full transition-all duration-300 ease-in-out"
               data-toggle="mate"
               aria-pressed="false"
               aria-label="Switch to Mate Customer">
-              <span class="text-lg md:text-2xl font-bold text-white">Mate</span>
-              <span class="text-xs md:text-sm font-medium text-white">Customer</span>
+              <span class="text-lg md:text-2xl  text-white">Mate</span>
+              <span class="text-xs md:text-sm  text-white">Customer</span>
             </button>
           </div>
         </div>
@@ -173,7 +173,7 @@
                 class="w-full md-w-1/2 pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                 required 
                 aria-describedby="first_nameError" />
-            <span id="first_nameError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+          
           </div>
           <!-- last name -->
           <div class="flex flex-col gap-1">
@@ -186,7 +186,7 @@
                 class="w-full pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                 required 
                 aria-describedby="last_nameError" />
-            <span id="last_nameError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+      
           </div>
           </div>
           <!-- Email Field -->
@@ -229,9 +229,7 @@
             <p>
               <a href="./login.html" class="text-blue-500 font-medium hover:opacity-80 transition-opacity">Already have an account? Log In</a>
             </p>
-            <p>
-              <a href="./forgot.html" class="text-blue-500 font-medium hover:opacity-80 transition-opacity">Forgot your password?</a>
-            </p>
+           
           </div>
         </form>
       </div>

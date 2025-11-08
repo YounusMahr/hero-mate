@@ -254,3 +254,13 @@
     justify-self: end;
   }
 }
+
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px !important;
+}
+.c-header__inner{
+     max-width: 1400px;
+}
+}
