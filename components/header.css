@@ -261,6 +261,6 @@
      padding: 0 0rem !important;
 }
 .container{
-  max-width: 1400px;
+  padding-inline: 0 !important;
 }
 }
