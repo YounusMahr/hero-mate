@@ -68,8 +68,8 @@
       }
 
       .toggle-btn--right.active {
-        background: linear-gradient(135deg, var(--color-blue) 0%, #0066ff 100%);
-        color: white;
+        background-color: white;
+        color: var(--color-blue);
         box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
       }
 
@@ -258,7 +258,7 @@
           </div>
   
           <!-- CTA Button -->
-          <button class="w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
+          <button class="trialButton w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
             Start free 14-day Trial
           </button>
           <p class="text-xs text-[color:rgba(46,50,56,0.6)] text-center mb-6">
@@ -366,7 +366,7 @@
           </div>
   
           <!-- CTA Button -->
-          <button class="w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
+          <button class="trialButton w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
             Start free 14-day Trial
           </button>
           <p class="text-xs text-[color:rgba(46,50,56,0.6)] text-center mb-6">
@@ -456,7 +456,7 @@
           </div>
   
           <!-- CTA Button -->
-          <button class="w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
+          <button class="trialButton w-full bg-black text-white font-semibold py-3 md:py-4 rounded-lg hover:bg-gray-800 transition-colors mb-3">
             Start free 14-day Trial
           </button>
           <p class="text-xs text-[color:rgba(46,50,56,0.6)] text-center mb-6">
@@ -543,13 +543,6 @@
    </div>
   <div class="grid-layout">
       <!-- Connecting Lines -->
-      <div class="connecting-line line-h1"></div>
-      <div class="connecting-line line-h2"></div>
-      <div class="connecting-line line-h3"></div>
-      <div class="connecting-line line-h4"></div>
-      <div class="connecting-line line-v1"></div>
-      <div class="connecting-line line-v2"></div>
-      <div class="connecting-line line-v3"></div>
 
       <!-- Card 1 -->
       <div class="process-card card-top-left">
@@ -1162,7 +1155,7 @@
       
       <!-- Modal content -->
       <div class="relative flex items-center justify-center min-h-screen p-4">
-        <div id="signupModalContent" class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 transform transition-all duration-300 scale-95 opacity-0 max-h-[90vh] overflow-y-auto">
+        <div id="signupModalContent" class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-4 md:p-6 transform transition-all duration-300 scale-95 opacity-0">
           <!-- Close button -->
           <button id="signupClose" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors" aria-label="Close signup">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1171,60 +1164,58 @@
           </button>
 
           <!-- Logo -->
-          <div class="flex justify-center mb-6">
+          <div class="flex justify-center mb-2">
             <img src="/public/icons/logo.png" alt="Heromate" class="h-12 w-auto" />
           </div>
 
           <!-- Description -->
-          <p class="text-center text-sm leading-relaxed text-gray-600 mb-6">
-            Join HeroMate and start your journey as a verified local hero. Create your account to begin helping your community.
+          <p class="text-center text-sm leading-relaxed text-gray-600 mb-2">
+            Access your HeroMate workspace with a secure login to manage and grow your business.
           </p>
 
           <!-- Toggle Container -->
-          <div class="toggle-container flex items-center justify-center py-2 mb-4">
-            <div class="toggle-wrapper inline-flex rounded-full border-2 border-[color:var(--color-blue)] bg-[color:var(--color-blue)] p-1 shadow-sm">
+          <div class="toggle-container flex items-center justify-center md:py-2">
+            <div class="toggle-wrapper inline-flex rounded-full bg-[color:var(--color-blue)] p-1 shadow-sm">
               <!-- Left Toggle: Hero Tradie -->
               <button 
-                class="toggle-btn toggle-btn--left active flex flex-col items-center justify-center px-6 md:px-8 py-1 rounded-full transition-all duration-300 ease-in-out"
+                class="toggle-btn toggle-btn--left active flex flex-col items-center justify-center px-6 md:px-8 rounded-full transition-all duration-300 ease-in-out"
                 data-toggle="hero"
                 aria-pressed="true"
                 aria-label="Switch to Hero Tradie">
-                <span class="text-lg md:text-2xl font-bold text-[color:var(--color-blue)]">Hero</span>
-                <span class="text-xs md:text-sm font-medium text-gray-800">Tradie</span>
+                <span class="text-lg md:text-2xl text-[color:var(--color-blue)]">Hero</span>
+                <span class="text-xs md:text-sm text-gray-800">Tradie</span>
               </button>
           
               <!-- Right Toggle: Mate Customer -->
               <button 
-                class="toggle-btn toggle-btn--right flex flex-col items-center justify-center px-6 md:px-8 py-1 rounded-full transition-all duration-300 ease-in-out"
+                class="toggle-btn toggle-btn--right flex flex-col items-center justify-center px-6 md:px-8 rounded-full transition-all duration-300 ease-in-out"
                 data-toggle="mate"
                 aria-pressed="false"
                 aria-label="Switch to Mate Customer">
-                <span class="text-lg md:text-2xl font-bold text-white">Mate</span>
-                <span class="text-xs md:text-sm font-medium text-white">Customer</span>
+                <span class="text-lg md:text-2xl text-white">Mate</span>
+                <span class="text-xs md:text-sm text-white">Customer</span>
               </button>
             </div>
           </div>
 
           <!-- Signup Form -->
-          <form id="popupSignupForm" class="flex flex-col gap-4" novalidate>
+          <form id="popupSignupForm" class="flex flex-col gap-2" novalidate>
             <!-- Name Fields -->
-            <div class="flex gap-3">
+            <div class="flex md:flex-row flex-col gap-2">
               <!-- First Name -->
-              <div class="flex flex-col gap-1 flex-1">
+              <div class="flex flex-col gap-1">
                 <label for="popupFirstName" class="text-sm font-semibold text-gray-800">First Name</label>
                 <input 
                   id="popupFirstName" 
                   type="text" 
                   name="first_name" 
                   placeholder="First Name" 
-                  class="w-full pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                  required 
-                  aria-describedby="popupFirstNameError" />
-                <span id="popupFirstNameError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+                  class="w-full md-w-1/2 pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  required />
               </div>
               
               <!-- Last Name -->
-              <div class="flex flex-col gap-1 flex-1">
+              <div class="flex flex-col gap-1">
                 <label for="popupLastName" class="text-sm font-semibold text-gray-800">Last Name</label>
                 <input 
                   id="popupLastName" 
@@ -1232,54 +1223,37 @@
                   name="last_name" 
                   placeholder="Last Name" 
                   class="w-full pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                  required 
-                  aria-describedby="popupLastNameError" />
-                <span id="popupLastNameError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+                  required />
               </div>
             </div>
 
             <!-- Email Field -->
             <div class="flex flex-col gap-1">
               <label for="popupSignupEmail" class="text-sm font-semibold text-gray-800">Email</label>
-              <div class="relative flex items-center">
-                <svg class="absolute left-3 w-5 h-5 text-gray-400 pointer-events-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <input 
-                  id="popupSignupEmail" 
-                  type="email" 
-                  name="email" 
-                  placeholder="Email" 
-                  class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                  required 
-                  aria-describedby="popupSignupEmailError" />
-              </div>
-              <span id="popupSignupEmailError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+              <input 
+                id="popupSignupEmail" 
+                type="email" 
+                name="email" 
+                placeholder="Email" 
+                class="w-full pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                required />
             </div>
 
-            <!-- Phone Number Field -->
+            <!-- Registration Field -->
             <div class="flex flex-col gap-1">
-              <label for="popupPhone" class="text-sm font-semibold text-gray-800">Phone Number</label>
-              <div class="relative flex items-center">
-                <svg class="absolute left-3 w-5 h-5 text-gray-400 pointer-events-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <input 
-                  id="popupPhone" 
-                  type="tel" 
-                  name="phone" 
-                  placeholder="+61 | Phone Number" 
-                  class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-                  required 
-                  aria-describedby="popupPhoneError" />
-              </div>
-              <span id="popupPhoneError" class="text-xs text-red-500 min-h-4 block" role="alert"></span>
+              <label for="popupRegistration" class="text-sm font-semibold text-gray-800">Registration</label>
+              <input 
+                id="popupRegistration" 
+                type="number" 
+                name="number" 
+                placeholder="+61 |" 
+                class="w-full pl-4 pr-4 py-3 border border-gray-200 rounded-lg text-sm font-sans transition-all focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                required />
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
-              Become a Hero
+            <button type="submit" class="w-full py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+              Sign up
             </button>
 
             <!-- Privacy Policy Link -->
@@ -1288,9 +1262,11 @@
             </p>
 
             <!-- Login Link -->
-            <p class="text-center text-sm text-gray-600">
-              <a href="#!" id="signupToLoginLink" class="text-blue-500 font-medium hover:opacity-80 transition-opacity">Already have an account? Log In</a>
-            </p>
+            <div class="flex flex-col gap-2 text-center text-sm text-gray-600">
+              <p>
+                <a href="#!" id="signupToLoginLink" class="text-blue-500 font-medium hover:opacity-80 transition-opacity">Already have an account? Log In</a>
+              </p>
+            </div>
           </form>
         </div>
       </div>
@@ -1454,22 +1430,61 @@
       popupToggleButtons.forEach(btn => {
         btn.classList.remove('active');
         btn.setAttribute('aria-pressed', 'false');
+        
+        // Get text spans
+        const firstSpan = btn.querySelector('span:first-child');
+        const secondSpan = btn.querySelector('span:last-child');
+        
+        // Reset text colors for inactive state
+        if (btn.classList.contains('toggle-btn--left')) {
+          // Left button inactive: both texts white
+          firstSpan.classList.remove('text-[color:var(--color-blue)]', 'text-gray-800');
+          firstSpan.classList.add('text-white');
+          secondSpan.classList.remove('text-[color:var(--color-blue)]', 'text-gray-800');
+          secondSpan.classList.add('text-white');
+        } else if (btn.classList.contains('toggle-btn--right')) {
+          // Right button inactive: both texts white
+          firstSpan.classList.remove('text-[color:var(--color-blue)]', 'text-gray-800');
+          firstSpan.classList.add('text-white');
+          secondSpan.classList.remove('text-[color:var(--color-blue)]', 'text-gray-800');
+          secondSpan.classList.add('text-white');
+        }
       });
       
       // Add active class to clicked button
       this.classList.add('active');
       this.setAttribute('aria-pressed', 'true');
       
+      // Get text spans for active button
+      const firstSpan = this.querySelector('span:first-child');
+      const secondSpan = this.querySelector('span:last-child');
+      
+      // Update text colors for active state
+      if (this.classList.contains('toggle-btn--left')) {
+        // Left button active: first text blue, second text grey
+        firstSpan.classList.remove('text-white', 'text-gray-800');
+        firstSpan.classList.add('text-[color:var(--color-blue)]');
+        secondSpan.classList.remove('text-white', 'text-[color:var(--color-blue)]');
+        secondSpan.classList.add('text-gray-800');
+      } else if (this.classList.contains('toggle-btn--right')) {
+        // Right button active: first text blue, second text grey
+        firstSpan.classList.remove('text-white', 'text-gray-800');
+        firstSpan.classList.add('text-[color:var(--color-blue)]');
+        secondSpan.classList.remove('text-white', 'text-[color:var(--color-blue)]');
+        secondSpan.classList.add('text-gray-800');
+      }
+      
       // Update current toggle
       popupCurrentToggle = toggleType;
-      
-      // Update button text based on selection
-      const submitBtn = popupSignupForm.querySelector('button[type="submit"]');
-      if (toggleType === 'hero') {
-        submitBtn.textContent = 'Become a Hero';
-      } else {
-        submitBtn.textContent = 'Join as Customer';
-      }
+    });
+  });
+
+  // Event listeners for trial buttons to show signup modal
+  const trialButtons = document.querySelectorAll('.trialButton');
+  trialButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      showSignupModal();
     });
   });
 
@@ -1487,7 +1502,7 @@
     // Simulate API call
     setTimeout(() => {
       // Success animation
-      submitBtn.textContent = popupCurrentToggle === 'hero' ? 'Welcome Hero!' : 'Welcome Customer!';
+      submitBtn.textContent = 'Welcome!';
       submitBtn.classList.add('bg-green-500', 'hover:bg-green-600');
       
       // Hide modal after success
@@ -1495,7 +1510,7 @@
         hideSignupModal();
         // Reset form
         popupSignupForm.reset();
-        submitBtn.textContent = popupCurrentToggle === 'hero' ? 'Become a Hero' : 'Join as Customer';
+        submitBtn.textContent = 'Sign up';
         submitBtn.disabled = false;
         submitBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
       }, 2000);

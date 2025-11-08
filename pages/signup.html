@@ -65,8 +65,8 @@
 }
 
 .toggle-btn--right.active {
-  background: linear-gradient(135deg, var(--color-blue) 0%, #0066ff 100%);
-  color: white;
+  background-color: white;
+  color: var(--color-blue);
   box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
 }
 
@@ -238,5 +238,63 @@
 
   <!-- Scripts -->
   <script type="module" src="../scripts/login.js"></script>
+  <script>
+    // Toggle functionality for signup buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButtons = document.querySelectorAll('.toggle-btn');
+      
+      toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          toggleButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+            
+            // Get text spans
+            const firstSpan = btn.querySelector('span:first-child');
+            const secondSpan = btn.querySelector('span:last-child');
+            
+            // Reset text colors for inactive state
+            if (btn.classList.contains('toggle-btn--left')) {
+              // Left button inactive: both texts white
+              firstSpan.classList.remove('text-[color:var(--color-blue)]', 'text-gray-800');
+              firstSpan.classList.add('text-white');
+              secondSpan.classList.remove('text-[color:var(--color-blue)]', 'text-gray-800');
+              secondSpan.classList.add('text-white');
+            } else if (btn.classList.contains('toggle-btn--right')) {
+              // Right button inactive: both texts white
+              firstSpan.classList.remove('text-gray-500');
+              firstSpan.classList.add('text-white');
+              secondSpan.classList.remove('text-gray-500');
+              secondSpan.classList.add('text-white');
+            }
+          });
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          this.setAttribute('aria-pressed', 'true');
+          
+          // Get text spans for active button
+          const firstSpan = this.querySelector('span:first-child');
+          const secondSpan = this.querySelector('span:last-child');
+          
+          // Update text colors for active state
+          if (this.classList.contains('toggle-btn--left')) {
+            // Left button active: first text blue, second text grey
+            firstSpan.classList.remove('text-white', 'text-gray-800');
+            firstSpan.classList.add('text-[color:var(--color-blue)]');
+            secondSpan.classList.remove('text-white', 'text-[color:var(--color-blue)]');
+            secondSpan.classList.add('text-gray-800');
+          } else if (this.classList.contains('toggle-btn--right')) {
+            // Right button active: first text blue, second text grey
+            firstSpan.classList.remove('text-white', 'text-gray-500');
+            firstSpan.classList.add('text-[color:var(--color-blue)]');
+            secondSpan.classList.remove('text-white', 'text-gray-500');
+            secondSpan.classList.add('text-gray-800');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
