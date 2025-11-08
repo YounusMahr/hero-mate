@@ -256,8 +256,7 @@
 }
 
 
-@media (min-width: 1600px) {
- 
+@media (min-width: 1400px) {
 .c-header__inner{
      padding: 0 0rem !important;
 }
