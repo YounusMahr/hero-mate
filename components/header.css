@@ -24,7 +24,7 @@
 
 @media (min-width: 1024px) {
   .c-header__inner {
-    padding: 0 0rem !important; /* Desktop padding */
+    padding: 0 1rem !important; /* Desktop padding */
   }
 }
 
