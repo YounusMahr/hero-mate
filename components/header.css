@@ -18,13 +18,13 @@
 
 @media (min-width: 640px) {
   .c-header__inner {
-    padding: 0 0rem !important; /* Tablet padding */
+    padding: 0 2rem !important; /* Tablet padding */
   }
 }
 
 @media (min-width: 1024px) {
   .c-header__inner {
-    padding: 0 0rem !important; /* Desktop padding */
+    padding: 0 5rem !important; /* Desktop padding */
   }
 }
 
@@ -256,3 +256,11 @@
 }
 
 
+@media (min-width: 1600px) {
+  .container {
+   padding:0 3rem;
+}
+.c-header__inner{
+     padding: 0 3rem;
+}
+}
