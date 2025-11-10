@@ -38,10 +38,19 @@
 
 .heromate-heading-text {
   /* Base text styling */
+  font-family: "Exo 2", sans-serif;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
   text-align: center;
+
+  /* Apply the specified linear gradient */
+  background: linear-gradient(13deg, rgba(47, 47, 47, 0.3) -6.73%, #f5f7fa 118.09%);
+
+  /* Clip background to text for gradient effect */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   /* Add subtle depth with drop shadow */
   filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.4));
@@ -49,4 +58,25 @@
   /* Ensure text is selectable */
   user-select: text;
   -webkit-user-select: text;
+}
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+  .heromate-heading-text {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .heromate-heading-text {
+    font-size: clamp(3.5rem, 9vw, 5rem);
+  }
+}
+
+/* Desktop optimization */
+@media (min-width: 1025px) {
+  .heromate-heading-text {
+    font-size: clamp(5rem, 12vw, 6rem);
+  }
 }
