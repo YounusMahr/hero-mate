@@ -278,20 +278,6 @@
 }
 
 
-@media (min-width: 1400px) {
-.c-header__inner{
-     padding-left: 0 !important;
-     padding-right: 0 !important;
-     padding: 0 0rem !important;
-}
-.container{
-  padding-inline: 0 !important;
-}
-}
 
-/* Media query for exact 1440x900 resolution */
-@media (width: 1440px) and (height: 900px) {
-  .heromate-heading-text {
-    font-size: 25rem;
-  }
-}
+
+

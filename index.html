@@ -36,148 +36,11 @@
       },
     }
   </script>
-  <style>
-    .toggle-container {
-      background: linear-gradient(135deg, rgba(185, 232, 255, 0.1) 0%, rgba(185, 232, 255, 0.05) 100%);
-      border-radius: 1rem;
-    }
-
-    .toggle-wrapper {
-      gap: 0.25rem;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .toggle-btn {
-      cursor: pointer;
-      font-family: "Inter", sans-serif;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      white-space: nowrap;
-    }
-
-    .toggle-btn--left.active {
-      background-color: white;
-      color: var(--color-blue);
-    }
-
-    .toggle-btn--left:not(.active) {
-      background-color: transparent;
-      color: rgba(46, 50, 56, 0.5);
-    }
-
-    .toggle-btn--right.active {
-      background: linear-gradient(135deg, var(--color-blue) 0%, #0066ff 100%);
-      color: white;
-      box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
-    }
-
-    .toggle-btn--right:not(.active) {
-      background-color: transparent;
-      color: rgba(46, 50, 56, 0.5);
-    }
-
-    /* Hover effects */
-    .toggle-btn:hover:not(.active) {
-      background-color: rgba(30, 144, 255, 0.05);
-      transform: translateY(-1px);
-    }
-
-    .toggle-btn.active:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(30, 144, 255, 0.4);
-    }
-
-    /* Focus states for accessibility */
-    .toggle-btn:focus-visible {
-      outline: 2px solid var(--color-blue);
-      outline-offset: 2px;
-    }
-
-
-    /* Media query for exact 1440x900 resolution */
-/* @media (min-width: 1920px) {
-  .heromate-heading-text {
-    font-size: 15rem !important;
-  }
-
-} */
-
-
-
-
-    /* Responsive adjustments */
-    @media (max-width: 640px) {
-      .toggle-btn {
-        padding: 0.5rem 1rem;
-      }
-
-      .toggle-btn span:first-child {
-        font-size: 1rem;
-      }
-
-      .toggle-btn span:last-child {
-        font-size: 0.7rem;
-      }
-    }
-
-    /* Hide scrollbar but keep scroll functionality */
-    #signupModalContent::-webkit-scrollbar {
-      display: none;
-    }
-
-    #signupModalContent {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
-
-    /* Ripple animation for play button */
-    @keyframes ripple {
-      0% {
-        transform: scale(1);
-        opacity: 0.8;
-      }
-      50% {
-        opacity: 0.4;
-      }
-      100% {
-        transform: scale(2.5);
-        opacity: 0;
-      }
-    }
-
-    .ripple-ring {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 8px solid var(--color-green);
-      animation: ripple 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-      transform-origin: center;
-    }
-
-    .ripple-ring:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .ripple-ring:nth-child(2) {
-      animation-delay: 0.5s;
-    }
-
-    .ripple-ring:nth-child(3) {
-      animation-delay: 1s;
-    }
-
-    .ripple-ring:nth-child(4) {
-      animation-delay: 1.5s;
-    }
-
-
-
-  </style>
   </head>
   <body>
 
     <!-- Component mount points -->
-    <header class="c-header" role="banner">
+    <header class="c-header " role="banner">
       <div class="c-header__inner ">
         <!-- Logo -->
         <a href="/" class="c-header__brand" aria-label="Heromate home">
@@ -535,7 +398,7 @@
         <div class="mx-auto  px-4 md:px-6">
           <div class="text-center">
             <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[color:var(--text-primary)] text-balance">
-              Our <span class="relative">Commitment<svg class="absolute mt-1 md:right-0 hidden md:block" xmlns="http://www.w3.org/2000/svg" md:width="264" md:height="16" viewBox="0 0 264 16" fill="none">
+              Our <span class="relative">Commitment<svg class="absolute mt-1 md:right-0 hidden md:block" xmlns="http://www.w3.org/2000/svg" width="264"  height="16"  viewBox="0 0 264 16" fill="none">
                 <path d="M3.01385 6.14118C10.9856 3.32546 34.9209 -0.319913 66.8889 7.62429C106.849 17.5545 121.823 -3.10333 173.648 6.60228C225.473 16.3079 247.226 15.8124 261.368 2.63716" stroke="#9AE841" stroke-width="5" stroke-linecap="round"/>
               </svg></span> to <span class="relative">Community<svg class="absolute mt-1 ml-5 md:ml-0 md:right-0" xmlns="http://www.w3.org/2000/svg" width="264" height="16" viewBox="0 0 264 16" fill="none">
                 <path d="M3.01385 6.14118C10.9856 3.32546 34.9209 -0.319913 66.8889 7.62429C106.849 17.5545 121.823 -3.10333 173.648 6.60228C225.473 16.3079 247.226 15.8124 261.368 2.63716" stroke="#9AE841" stroke-width="5" stroke-linecap="round"/>
@@ -887,7 +750,7 @@
 
 
       <!-- Email support CTA -->
-      <section id="support-cta" class="bg-[#D7F1FF] mb-[-2rem]" aria-label="We're here when you need a mate">
+      <section  class="bg-[#D7F1FF] mb-[-2rem]" aria-label="We're here when you need a mate">
         <div class="mx-auto  w-[80%]  md:px-6">
           <div class="relative rounded-2xl bg-[color:var(--color-blue)] text-white p-6 md:p-8 lg:p-10 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 items-center">
@@ -921,23 +784,18 @@
       </section>
 
       <!-- Demo content removed for production -->
-    </main>
+        <!-- Footer Before    -->
 
-    <!-- <section class="bg-black text-center">
-      <h1 class="font-extrabold text-[5rem] text-grey-600 md:text-[16rem] lg:text-[17rem] xl:text-[20rem]" style="background: linear-gradient(to bottom, white 0%, white 70%, black 70%, black 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: opacity(0.8);">heromate</h1>
-    </section> -->
+    
+    </main>
   
 
-    <!-- Footer Before    -->
-    <section class="heromate-heading-section pt-10 md:pt-0" aria-label="Heromate brand heading">
-      <div class="">
-        <h2 class="heromate-heading-text md:-mt-10 text-[5rem] md:text-[15rem] lg:text-[20rem]    " style="font-family: 'Poppins', sans-serif; -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 60%, transparent 100%);">heromate</h2>
-      </div>
-    </section> 
-    
+    <div class="heromate-heading-section pt-10 md:pt-0" aria-label="Heromate brand heading">
+      <h3 class="heromate-heading-text md:-mt-10 text-[5rem] md:text-[15rem] lg:text-[19rem]  py-2  " style="font-family: 'Poppins', sans-serif; -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 60%, transparent 100%);">heromate</h3>
+   </div>
     
     <!-- Footer component -->
-    <footer class="site-footer bg-[#000000]  p-6" style="font-family: 'Poppins', sans-serif;">
+    <footer class="site-footer bg-[#000000]  p-6  md:px-16" style="font-family: 'Poppins', sans-serif;">
       <div class="mx-auto   md:px-16  ">
         <!-- Updated grid layout and spacing for cleaner design -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-10 lg:gap-10">
