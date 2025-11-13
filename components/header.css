@@ -13,17 +13,23 @@
   justify-content: space-between;
   /* gap: var(--space-8); */
   min-height: 64px;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   padding: 0 1rem !important; /* Mobile padding - override container class */
 }
 
 @media (min-width: 640px) {
   .c-header__inner {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
     padding: 0 2rem !important; /* Tablet padding */
   }
 }
 
 @media (min-width: 1024px) {
   .c-header__inner {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
     padding: 0 5rem !important; /* Desktop padding */
   }
 }
@@ -274,6 +280,8 @@
 
 @media (min-width: 1400px) {
 .c-header__inner{
+     padding-left: 0 !important;
+     padding-right: 0 !important;
      padding: 0 0rem !important;
 }
 .container{
