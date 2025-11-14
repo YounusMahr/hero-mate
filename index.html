@@ -79,6 +79,12 @@
       animation-delay: 1.5s;
     }
 
+   @media (width: 430px) and (height: 932px) {
+    .elem-1 {
+      display: none;
+    }
+   }
+
   </style>
   <body>
 
@@ -132,9 +138,6 @@
       <section id="hero"  class="hero"  aria-label="Heromate Hero">
         <!-- Decorative background shapes -->
         <div class="hero__bg  " aria-hidden="true">
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="268" height="230" viewBox="0 0 268 230" fill="none">
-            <path d="M152.057 0.0291848V114.168C109.593 116.211 52.1343 111.688 12.4227 84.2545C-9.39522 69.1955 -24.5067 48.183 -33.351 20.5164C-35.401 14.0667 -37.1289 7.20848 -38.5346 0H-97.3405H-156L-154.624 8.58013H-154.653C-154.184 11.6445 -153.686 14.6796 -153.13 17.7148L-153.101 17.9482C-140.449 88.2819 -106.829 142.623 -53.0604 179.57C6.12625 220.223 78.2279 230 133.842 230C182.983 230 219.268 222.383 222.373 221.712L268 211.789V0.0291848H152.057Z" fill="#B9E8FF"/>
-          </svg> -->
           <svg class="hero-shape hero-shape--lt" xmlns="http://www.w3.org/2000/svg" width="268" height="230" viewBox="0 0 268 230" fill="none" focusable="false">
             <path d="M152.057 0.0293069V114.168C109.593 116.211 52.1343 111.688 12.4227 84.2547C-9.39522 69.1957 -24.5067 48.1831 -33.351 20.5166C-35.401 14.0669 -37.1289 7.2086 -38.5346 0.00012207H-97.3405H-156L-154.624 8.58025H-154.653C-154.184 11.6446 -153.686 14.6797 -153.13 17.7149L-153.101 17.9484C-140.449 88.2821 -106.829 142.623 -53.0604 179.57C6.12626 220.223 78.2279 230 133.842 230C182.983 230 219.268 222.383 222.373 221.712L268 211.789V0.0293069H152.057Z" fill="#B9E8FF"/>
           </svg>
@@ -349,7 +352,7 @@
                   <h2 class="font-display px-3 text-3xl md:text-3xl lg:text-[2.6rem] font-extrabold text-[color:var(--text-primary)]">
                     Heromate Story - Why us ?
                   </h2>
-                  <svg class="mb-4 md:mb-6 abolute 
+                  <svg class="mb-4 md:mb-6 abolute elem-1
                   md:ms-auto" xmlns="http://www.w3.org/2000/svg" width="176" height="17" viewBox="0 0 176 17" fill="none">
                    <path d="M3.44357 10.5585C8.66294 7.62138 24.3463 3.61574 45.3249 11.0899C71.5482 20.4326 81.3142 -0.466608 115.316 8.47423C149.317 17.4151 163.578 16.5946 172.817 3.19695" stroke="#9AE841" stroke-width="5" stroke-linecap="round"/>
                  </svg>
@@ -443,7 +446,7 @@
             <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[color:var(--text-primary)] text-balance">
               Our <span class="relative">Commitment<svg class="absolute mt-1 md:right-0 hidden md:block" xmlns="http://www.w3.org/2000/svg" width="264"  height="16"  viewBox="0 0 264 16" fill="none">
                 <path d="M3.01385 6.14118C10.9856 3.32546 34.9209 -0.319913 66.8889 7.62429C106.849 17.5545 121.823 -3.10333 173.648 6.60228C225.473 16.3079 247.226 15.8124 261.368 2.63716" stroke="#9AE841" stroke-width="5" stroke-linecap="round"/>
-              </svg></span> to <span class="relative">Community<svg class="absolute mt-1 ml-5 md:ml-0 md:right-0" xmlns="http://www.w3.org/2000/svg" width="264" height="16" viewBox="0 0 264 16" fill="none">
+              </svg></span> to <span class="relative">Community<svg  class=" elem-1 absolute mt-1 ml-5 md:ml-0 md:right-0" xmlns="http://www.w3.org/2000/svg" width="264" height="16" viewBox="0 0 264 16" fill="none">
                 <path d="M3.01385 6.14118C10.9856 3.32546 34.9209 -0.319913 66.8889 7.62429C106.849 17.5545 121.823 -3.10333 173.648 6.60228C225.473 16.3079 247.226 15.8124 261.368 2.63716" stroke="#9AE841" stroke-width="5" stroke-linecap="round"/>
               </svg></span>
             </h2>
