@@ -12,15 +12,22 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Deploy to EC2
-      uses: appleboy/scp-action@v0.1.3
+    - name: Deploy to EC2 via SSH
+      uses: appleboy/ssh-action@v0.1.10
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "."
-        target: "/var/www/html"
-        rm: true
+        script: |
+          # Remove old files
+          sudo rm -rf /var/www/html/*
+          # Copy new files (using tar for better permission handling)
+          sudo tar -xzf - -C /var/www/html/ << EOF
+          $(tar -czf - .)
+          EOF
+          # Fix permissions
+          sudo chown -R nginx:nginx /var/www/html || true
+          sudo chmod -R 755 /var/www/html
 
     - name: Restart nginx
       uses: appleboy/ssh-action@v0.1.10
